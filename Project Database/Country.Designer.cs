@@ -77,6 +77,7 @@
             this.SEARCH.TabIndex = 3;
             this.SEARCH.Text = "SEARCH";
             this.SEARCH.UseVisualStyleBackColor = true;
+            this.SEARCH.Click += new System.EventHandler(this.SEARCH_Click);
             // 
             // DELETE
             // 

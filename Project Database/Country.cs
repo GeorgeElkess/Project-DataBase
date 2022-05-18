@@ -89,5 +89,10 @@ namespace Project_Database
                 Message.Error("THIS ID IS NOT VALID SO THE DELETE CANT BE DONE");
             }
         }
+
+        private void SEARCH_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
