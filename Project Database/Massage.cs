@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Project_Database
 {
-    internal class Massage
+    internal class Message
     {
-        private Massage() { }
-        static void Error(string Massege)
+        private Message() { }
+        public static void Error(string Message)
         {
-            MessageBox.Show(Massege,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show(Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
         /// <summary>
         /// Inform the User
         /// </summary>
         /// <param name="Massege"></param>
         /// <returns> true if user press Ok false if user press Cancel</returns>
-        static bool Inform(string Massege)
+        static bool Inform(string Message)
         {
-            DialogResult a = MessageBox.Show(Massege,"Inform",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+            DialogResult a = MessageBox.Show(Message,"Inform",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
             if (a.ToString() != "OK") return false;
             else return true;
         }

@@ -67,6 +67,7 @@
             this.UPDATE.TabIndex = 2;
             this.UPDATE.Text = "UPDATE";
             this.UPDATE.UseVisualStyleBackColor = true;
+            this.UPDATE.Click += new System.EventHandler(this.UPDATE_Click);
             // 
             // SEARCH
             // 
