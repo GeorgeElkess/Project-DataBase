@@ -67,7 +67,7 @@ namespace Project_Database
                 Datachec = dataBase.Read("Hotelid" + nametext.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Hotelid = '" + hotel_id.Text + "'", "Name = '" + nametext.Text+"'");
+                    dataBase.Update("Hotelid = " + hotel_id.Text , "Name = '" + nametext.Text+"'");
                 }
             }  
             else
@@ -81,7 +81,7 @@ namespace Project_Database
                 Datachec = dataBase.Read("Hotelid" + ratingtext.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Hotelid = '" + hotel_id.Text + "'", "Rating = '" + ratingtext.Text + "'");
+                    dataBase.Update("Hotelid = " + hotel_id.Text , "Rating = '" + ratingtext.Text + "'");
                 }
             }
             else
@@ -94,7 +94,7 @@ namespace Project_Database
                 Datachec = dataBase.Read("Hotelid" + addresstext.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Hotelid = '" + hotel_id.Text + "'", "Address = '" + addresstext.Text + "'");
+                    dataBase.Update("Hotelid = " + hotel_id.Text , "Address = '" + addresstext.Text + "'");
                 }
             }
             else
@@ -107,12 +107,37 @@ namespace Project_Database
         {
             if (hotel_id.Text != "")
             {
-                dataBase.Delete("Hotelid=" + hotel_id.Text);
+                dataBase.Delete("Hotelid= " + hotel_id.Text);
             }
             else
             {
                 Message.Error("THIS ID IS NOT VALID SO THE DELETE CANT BE DONE");
             }
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            if(nametext.Text != "" || ratingtext.Text != "" || addresstext.Text != ""|| hotel_id.Text != "")
+            {
+                if (hotel_id.Text != "")
+                {
+                    dataBase.Read("Hotelid= " + hotel_id.Text);
+                    //dataBase.GetTable();
+                }
+                if (ratingtext.Text != "")
+                {
+
+                }
+                if (addresstext.Text != "")
+                {
+
+                }
+                if (nametext.Text != "")
+                {
+
+                }
+            }
+           
         }
     }
 }

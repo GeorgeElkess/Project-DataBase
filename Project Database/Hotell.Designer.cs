@@ -144,6 +144,7 @@
             this.Search.TabIndex = 16;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // Add
             // 
