@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {}
+    "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {
+    "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+        "projectUniqueName": "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
         "projectName": "Project Database",
-        "projectPath": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+        "projectPath": "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
         "packagesPath": "C:\\Users\\Seif Elmoushy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
+        "outputPath": "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
