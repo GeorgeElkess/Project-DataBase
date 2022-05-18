@@ -56,6 +56,7 @@
             this.Screen_hotel.RowTemplate.Height = 33;
             this.Screen_hotel.Size = new System.Drawing.Size(803, 395);
             this.Screen_hotel.TabIndex = 24;
+            this.Screen_hotel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Screen_hotel_CellContentClick);
             // 
             // label5
             // 
