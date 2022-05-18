@@ -1,15 +1,7 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {}
-=======
-<<<<<<< HEAD
->>>>>>> cb96fe2047823b4e546eabe6e7c9a2273cbeeeaa
     "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {}
->>>>>>> 61d7df07d5994c50a0ffdbdebb51a7292d114bb6
   },
   "projects": {
     "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {
@@ -17,49 +9,15 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
         "projectName": "Project Database",
-<<<<<<< HEAD
-        "projectPath": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
-        "packagesPath": "C:\\Users\\Seif Elmoushy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
-=======
         "projectPath": "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
         "packagesPath": "C:\\Users\\George Elkomos\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
-<<<<<<< HEAD
-=======
-=======
-    "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
-        "projectName": "Project Database",
-        "projectPath": "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
-        "packagesPath": "C:\\Users\\Maichael Atef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
->>>>>>> f7e32f5c286246649dd3d07ca46e889f98b1940e
->>>>>>> 61d7df07d5994c50a0ffdbdebb51a7292d114bb6
->>>>>>> cb96fe2047823b4e546eabe6e7c9a2273cbeeeaa
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\George Elkomos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-<<<<<<< HEAD
-          "C:\\Users\\Seif Elmoushy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-<<<<<<< HEAD
-          "C:\\Users\\George Elkomos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\Maichael Atef\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> f7e32f5c286246649dd3d07ca46e889f98b1940e
->>>>>>> 61d7df07d5994c50a0ffdbdebb51a7292d114bb6
->>>>>>> cb96fe2047823b4e546eabe6e7c9a2273cbeeeaa
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -109,19 +67,7 @@
               "privateAssets": "none"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
-=======
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
-=======
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
->>>>>>> f7e32f5c286246649dd3d07ca46e889f98b1940e
->>>>>>> 61d7df07d5994c50a0ffdbdebb51a7292d114bb6
->>>>>>> cb96fe2047823b4e546eabe6e7c9a2273cbeeeaa
         }
       }
     }
