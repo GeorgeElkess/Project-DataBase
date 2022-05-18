@@ -49,7 +49,10 @@ namespace Project_Database
 
         private void UPDATE_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text!=""&&(COUNTRY_NAME.Text!=""||COUNTRY_RATE.Text!=""))
+            {
 
+            }
         }
     }
 }
