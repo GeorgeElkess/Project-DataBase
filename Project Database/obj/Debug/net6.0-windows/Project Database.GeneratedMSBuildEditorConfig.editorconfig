@@ -13,4 +13,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Project_Database
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\
+=======
 build_property.ProjectDir = C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\
+>>>>>>> 931c892cf87aeefaa0ea4e3a0217540376e2a378

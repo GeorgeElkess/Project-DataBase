@@ -49,9 +49,32 @@ namespace Project_Database
 
         private void UPDATE_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text!=""&&(COUNTRY_NAME.Text!=""||COUNTRY_RATE.Text!=""))
+            if(textBox1.Text!=""&&COUNTRY_NAME.Text!="")
             {
+                List<List<string>> Datachec;
+                Datachec = dataBase.Read("CountryId" + textBox1.Text);
+                if(Datachec.Count!=0)
+                {
+                    dataBase.Update("CountryId = " + textBox1.Text, "Name = " + COUNTRY_NAME.Text);
+                }
+            }
+            else
+            {
+                Message.Error("UPDATE CANT BE DONE");
+            }
 
+            if(textBox1.Text != "" && COUNTRY_RATE.Text != "")
+            {
+                List<List<string>> Datachec;
+                Datachec = dataBase.Read("Rating" + COUNTRY_RATE.Text);
+                if (Datachec.Count != 0)
+                {
+                    dataBase.Update("CountryId = " + textBox1.Text, "Rating = " + COUNTRY_RATE.Text);
+                }
+            }
+            else
+            {
+                Message.Error("UPDATE CANT BE DONE");
             }
         }
     }
