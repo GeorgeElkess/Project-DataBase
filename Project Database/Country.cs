@@ -80,9 +80,13 @@ namespace Project_Database
 
         private void DELETE_Click(object sender, EventArgs e)
         {
-            if()
+            if(textBox1.Text!="")
             {
-
+                dataBase.Delete("CountryId=" + textBox1.Text);
+            }
+            else
+            {
+                Message.Error("THIS ID IS NOT VALID SO THE DELETE CANT BE DONE");
             }
         }
     }
