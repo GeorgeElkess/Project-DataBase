@@ -27,8 +27,7 @@ namespace Project_Database
             Headrs.Add("Job Title");//    5
             Headrs.Add("Working Hours");//6
             Headrs.Add("Salary");//       7
-            DataTable x =  DataBase.GetTable(Headrs, DataBase.Read());
-            dataGridView1.DataSource = x;
+            dataGridView1.DataSource = DataBase.GetTable(Headrs, DataBase.Read());
         }
 
         private void button3_Click(object sender, EventArgs e)
