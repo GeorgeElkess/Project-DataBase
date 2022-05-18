@@ -107,6 +107,7 @@ namespace Project_Database
         /// ColumnName = Value, ColumnName = Value
         /// Like EmployeeName = 'George', Salary = 3000
         /// </param>
+        ///
         public void Update(string Condition, string Set)
         {
             con.Open();
