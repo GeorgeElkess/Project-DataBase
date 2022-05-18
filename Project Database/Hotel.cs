@@ -16,7 +16,7 @@ namespace Project_Database
         {
             InitializeComponent();
         }
-
+        DataBase dataBase = new DataBase("Hotelid");
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -34,7 +34,19 @@ namespace Project_Database
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.Text != "" && textBox3.Text != "" && textBox2.Text != "")
+            {
+                List<List<string>> Datachec;
+                Datachec = dataBase.Read("Name=" + textBox1.Text);
+                if (Datachec.Count == 0)
+                {
+                    dataBase.Insert(textBox1.Text + ", " + textBox2.Text + ", " + textBox3.Text);
+                }
+                else
+                {
+                    Message.Error("Name IS Already Exist");
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,6 +75,16 @@ namespace Project_Database
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
