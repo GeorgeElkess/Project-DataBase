@@ -12,8 +12,28 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\George Elkomos\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\George Elkomos\\.nuget\\packages",
+=======
+<<<<<<< HEAD
+      "C:\\Users\\Seif Elmoushy\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Seif Elmoushy\\.nuget\\packages",
+=======
+<<<<<<< HEAD
+      "C:\\Users\\George Elkomos\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\George Elkomos\\.nuget\\packages",
+=======
+<<<<<<< HEAD
+      "C:\\Users\\Seif Elmoushy\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Seif Elmoushy\\.nuget\\packages",
+=======
+      "C:\\Users\\Maichael Atef\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Maichael Atef\\.nuget\\packages",
+>>>>>>> 61d7df07d5994c50a0ffdbdebb51a7292d114bb6
+>>>>>>> cb96fe2047823b4e546eabe6e7c9a2273cbeeeaa
+>>>>>>> fd455eb1ec22d97146be86a9666f340194332a01
+>>>>>>> d55a47e68c7db4c918bc0ba214608b2bef228a0a
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

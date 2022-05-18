@@ -1,23 +1,37 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {}
+=======
+    "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {}
+>>>>>>> d55a47e68c7db4c918bc0ba214608b2bef228a0a
   },
   "projects": {
-    "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {
+    "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+        "projectUniqueName": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
         "projectName": "Project Database",
+<<<<<<< HEAD
         "projectPath": "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
         "packagesPath": "C:\\Users\\George Elkomos\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\George Elkomos\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
+=======
+        "projectPath": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+        "packagesPath": "C:\\Users\\Seif Elmoushy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
+>>>>>>> d55a47e68c7db4c918bc0ba214608b2bef228a0a
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\George Elkomos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Seif Elmoushy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> d55a47e68c7db4c918bc0ba214608b2bef228a0a
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -67,7 +81,11 @@
               "privateAssets": "none"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> d55a47e68c7db4c918bc0ba214608b2bef228a0a
         }
       }
     }
