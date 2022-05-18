@@ -22,3 +22,27 @@ D:\Projects\Project Database\Project Database\obj\Debug\net6.0-windows\Project D
 D:\Projects\Project Database\Project Database\obj\Debug\net6.0-windows\ref\Project Database.dll
 D:\Projects\Project Database\Project Database\obj\Debug\net6.0-windows\Project Database.pdb
 D:\Projects\Project Database\Project Database\obj\Debug\net6.0-windows\Project Database.genruntimeconfig.cache
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.csproj.AssemblyReference.cache
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Form1.resources
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.csproj.GenerateResource.cache
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.AssemblyInfoInputs.cache
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.AssemblyInfo.cs
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.csproj.CoreCompileInputs.cache
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.pdb
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.exe
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.deps.json
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.runtimeconfig.json
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.pdb
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.csproj.CopyComplete
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\refint\Project Database.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.genruntimeconfig.cache
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\ref\Project Database.dll

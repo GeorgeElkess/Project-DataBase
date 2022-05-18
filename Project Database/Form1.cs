@@ -35,6 +35,7 @@ namespace Project_Database
         {
             string Id = textBox1.Text;
             DataBase.Delete("EmployeeId = " + Id);
+           // DataBase.Update("Employee", );
         }
 
         private void button4_Click(object sender, EventArgs e)
