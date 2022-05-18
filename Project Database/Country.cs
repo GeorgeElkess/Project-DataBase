@@ -30,19 +30,26 @@ namespace Project_Database
             if(COUNTRY_NAME.Text!=""&&COUNTRY_RATE.Text!="")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("COUNTRY_NAME");
-                if ()
+                Datachec = dataBase.Read("Name="+COUNTRY_NAME.Text);
+                if (Datachec.Count==0)
                 {
                     dataBase.Insert(COUNTRY_NAME.Text + ", " + COUNTRY_RATE.Text);
                 }
-                
+                else
+                {
+                    Message.Error("Name IS Already Exist");
+                }
             }
-
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
+        }
+
+        private void UPDATE_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
