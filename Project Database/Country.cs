@@ -22,7 +22,8 @@ namespace Project_Database
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
 
         }
-        DataBase dataBase = new DataBase("Country");
+        DataBase dataBase = new DataBase("Hotel");
+        
         
         private void ADD_Click(object sender, EventArgs e)
         {

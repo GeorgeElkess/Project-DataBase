@@ -18,7 +18,7 @@ namespace Project_Database
         /// </summary>
         /// <param name="Massege"></param>
         /// <returns> true if user press Ok false if user press Cancel</returns>
-        static bool Inform(string Message)
+        public static bool Inform(string Message)
         {
             DialogResult a = MessageBox.Show(Message,"Inform",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
             if (a.ToString() != "OK") return false;
