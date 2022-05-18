@@ -86,6 +86,7 @@
             this.DELETE.TabIndex = 4;
             this.DELETE.Text = "DELETE";
             this.DELETE.UseVisualStyleBackColor = true;
+            this.DELETE.Click += new System.EventHandler(this.DELETE_Click);
             // 
             // dataGridView1
             // 

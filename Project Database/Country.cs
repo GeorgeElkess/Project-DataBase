@@ -77,5 +77,13 @@ namespace Project_Database
                 Message.Error("UPDATE CANT BE DONE");
             }
         }
+
+        private void DELETE_Click(object sender, EventArgs e)
+        {
+            if()
+            {
+
+            }
+        }
     }
 }
