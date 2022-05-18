@@ -77,6 +77,7 @@
             this.SEARCH.TabIndex = 3;
             this.SEARCH.Text = "SEARCH";
             this.SEARCH.UseVisualStyleBackColor = true;
+            this.SEARCH.Click += new System.EventHandler(this.SEARCH_Click);
             // 
             // DELETE
             // 
@@ -86,6 +87,7 @@
             this.DELETE.TabIndex = 4;
             this.DELETE.Text = "DELETE";
             this.DELETE.UseVisualStyleBackColor = true;
+            this.DELETE.Click += new System.EventHandler(this.DELETE_Click);
             // 
             // dataGridView1
             // 
