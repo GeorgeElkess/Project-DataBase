@@ -454,23 +454,47 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "C:\\Users\\Maichael Atef\\.nuget\\packages\\": {},
+=======
     "C:\\Users\\Seif Elmoushy\\.nuget\\packages\\": {},
+>>>>>>> e64e2fd251dfd08e11959d62396114eeb7535113
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+      "projectName": "Project Database",
+      "projectPath": "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+      "packagesPath": "C:\\Users\\Maichael Atef\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
+>>>>>>> 6a02f6eb005f6d79c59643656089b806064b3c4f
       "projectName": "Project Database",
       "projectPath": "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\Project Database.csproj",
       "packagesPath": "C:\\Users\\Seif Elmoushy\\.nuget\\packages\\",
+<<<<<<< HEAD
       "outputPath": "C:\\Users\\Seif Elmoushy\\source\\repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
+=======
+      "outputPath": "C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\",
+>>>>>>> e64e2fd251dfd08e11959d62396114eeb7535113
+>>>>>>> 6a02f6eb005f6d79c59643656089b806064b3c4f
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\Maichael Atef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
         "C:\\Users\\Seif Elmoushy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> e64e2fd251dfd08e11959d62396114eeb7535113
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -520,8 +544,28 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> e64e2fd251dfd08e11959d62396114eeb7535113
       }
     }
+<<<<<<< HEAD
   }
+=======
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+<<<<<<< HEAD
+      "message": "Problem reading the cache file C:\\Users\\Maichael Atef\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file C:\\Users\\Seif Elmoushy\\Source\\Repos\\GeorgeElkess\\Project-DataBase\\Project Database\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> e64e2fd251dfd08e11959d62396114eeb7535113
+    }
+  ]
+>>>>>>> 6a02f6eb005f6d79c59643656089b806064b3c4f
 }

@@ -86,9 +86,10 @@ namespace Project_Database
             }
         }
 
+        
         private void SEARCH_Click(object sender, EventArgs e)
         {
-
+            string condition
         }
     }
 }
