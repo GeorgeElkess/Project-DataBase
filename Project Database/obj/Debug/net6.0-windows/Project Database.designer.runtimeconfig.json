@@ -12,13 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
       "C:\\Users\\George Elkomos\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\George Elkomos\\.nuget\\packages",
-=======
-      "C:\\Users\\Seif Elmoushy\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Seif Elmoushy\\.nuget\\packages",
->>>>>>> e64e2fd251dfd08e11959d62396114eeb7535113
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
