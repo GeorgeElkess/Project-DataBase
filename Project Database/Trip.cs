@@ -38,8 +38,20 @@ namespace Project_Database
             comboBox2.Items.Add("Non");
         }
 
+        void Initialize()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            dateTimePicker1.Text = "1/1/2000";
+            dateTimePicker2.Text = "1/1/2000";
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex == 0) return;
             DataBase Hotel = new DataBase("Hotel");
             List<List<string>> HotelName = Hotel.Read("Name = '" + comboBox1.SelectedItem.ToString() + "'");
             string HotelId = HotelName[0][0];
@@ -76,8 +88,8 @@ namespace Project_Database
             else if (textBox3.Text == "") Message.Error("Must Enter Employee Id");
             else if (comboBox1.SelectedIndex < 1) Message.Error("Must Enter Hotel Name");
             else if (comboBox2.SelectedIndex < 1) Message.Error("Must Enter Room Number");
-            else if (StartingDate.ToString() == "1/1/2000") Message.Error("Must Enter Starting Date");
-            else if (EndingDate.ToString() == "1/1/2000") Message.Error("Must Enter Ending Date");
+            else if (StartingDate.ToFormatedString() == "1/1/2000") Message.Error("Must Enter Starting Date");
+            else if (EndingDate.ToFormatedString() == "1/1/2000") Message.Error("Must Enter Ending Date");
             else if (EndingDate < StartingDate) Message.Error("Ending Date must be after the starting Date");
             else
             {
@@ -103,7 +115,10 @@ namespace Project_Database
                 List<List<string>> RoomName = RoomData.Read("RoomNumber = '" + RoomNumber + "'");
                 string RoomId = RoomName[0][0];
                 if (Message.Inform("Data will be Inserted"))
-                    data.Insert(CustomerId + ", " + EmployeeId + ", " + RoomId + ", '" + StartingDate + "', '" + EndingDate + "'");
+                {
+                    data.Insert(CustomerId + ", " + EmployeeId + ", " + RoomId + ", '" + StartingDate.ToFormatedString() + "', '" + EndingDate.ToFormatedString() + "'");
+                    Initialize();
+                }
             }
         }
 
@@ -114,16 +129,18 @@ namespace Project_Database
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") {
+            if (textBox1.Text == "")
+            {
                 Message.Error("Trip Id is required");
                 return;
             }
             string TripId = textBox1.Text;
-            if (data.Read("TripId = " + TripId).Count == 0) {
+            if (data.Read("TripId = " + TripId).Count == 0)
+            {
                 Message.Error("Trip Id no exist");
                 return;
             }
-            if(textBox2.Text != "")
+            if (textBox2.Text != "")
             {
                 string CustomerId = textBox2.Text;
                 DataBase CustomerData = new DataBase("Customer");
@@ -147,25 +164,26 @@ namespace Project_Database
             }
             Date StartingDate = new Date(dateTimePicker1.Text);
             Date EndingDate = new Date(dateTimePicker2.Text);
-            if (StartingDate.ToString() != "1/1/2000" && EndingDate.ToString() != "1/1/2000")
+            if (StartingDate.ToFormatedString() != "1/1/2000" && EndingDate.ToFormatedString() != "1/1/2000")
             {
                 if (EndingDate < StartingDate) Message.Error("Ending Date must be after the starting Date");
-                else data.Update("TripId = " + TripId, "StartDate = '" + StartingDate.ToString() + "', EndDate = '" + EndingDate.ToString() + "'");
+                else data.Update("TripId = " + TripId, "StartDate = '" + StartingDate.ToFormatedString() + "', EndDate = '" + EndingDate.ToFormatedString() + "'");
             }
-            else if (StartingDate.ToString() != "1/1/2000")
+            else if (StartingDate.ToFormatedString() != "1/1/2000")
             {
                 List<List<string>> x = data.Read("TripId = " + TripId);
                 Date EndDate = Date.FromDataBase(x[0][5]);
                 if (StartingDate > EndDate) Message.Error("Starting Date must be befor Ending Date");
-                else data.Update("TripId = " + TripId, "StartDate = '" + StartingDate.ToString() + "'");
+                else data.Update("TripId = " + TripId, "StartDate = '" + StartingDate.ToFormatedString() + "'");
             }
-            else if (EndingDate.ToString() != "1/1/2000")
+            else if (EndingDate.ToFormatedString() != "1/1/2000")
             {
                 List<List<string>> x = data.Read("TripId = " + TripId);
                 Date StartDate = Date.FromDataBase(x[0][4]);
                 if (EndingDate < StartDate) Message.Error("Ending Date must be after Starting Date");
-                else data.Update("TripId = " + TripId, "EndDate = '" + EndingDate.ToString() + "'");
+                else data.Update("TripId = " + TripId, "EndDate = '" + EndingDate.ToFormatedString() + "'");
             }
+            Initialize();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -194,14 +212,15 @@ namespace Project_Database
                     bool IsThere = false;
                     for (int j = 0; j < Rooms.Count; j++)
                     {
-                        if(Rooms[j][0] == Trips[i][3]) IsThere = true;
+                        if (Rooms[j][0] == Trips[i][3]) IsThere = true;
                     }
-                    if(!IsThere) Trips.RemoveAt(i--);
+                    if (!IsThere) Trips.RemoveAt(i--);
                 }
                 dataGridView1.DataSource = data.GetTable(Headers, Trips);
+                Initialize();
                 return;
             }
-            if(comboBox2.SelectedIndex > 0)
+            if (comboBox2.SelectedIndex > 0)
             {
                 string RoomNumber = comboBox2.SelectedItem.ToString();
                 DataBase RoomData = new DataBase("Room");
@@ -211,9 +230,10 @@ namespace Project_Database
             }
             Date StartingDate = new Date(dateTimePicker1.Text);
             Date EndingDate = new Date(dateTimePicker2.Text);
-            if (StartingDate.ToString() != "1/1/2000") Condition += "StartDate = '" + StartingDate.ToString() + "'";
-            if (EndingDate.ToString() != "1/1/2000") Condition += "EndDate = '" + EndingDate.ToString() + "'";
+            if (StartingDate.ToFormatedString() != "1/1/2000") Condition += "StartDate = '" + StartingDate.ToFormatedString() + "'";
+            if (EndingDate.ToFormatedString() != "1/1/2000") Condition += "EndDate = '" + EndingDate.ToFormatedString() + "'";
             dataGridView1.DataSource = data.GetTable(Headers, data.Read(Condition));
+            Initialize();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -230,6 +250,12 @@ namespace Project_Database
                 return;
             }
             data.Delete("TripId = " + TripId);
+            Initialize();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -177,7 +177,7 @@ namespace Project_Database
             x.Year = int.Parse(temp[2]);
             return x;
         }
-        public string ToString()
+        public string ToFormatedString()
         {
             string Date = Day.ToString() + "/" + Month.ToString() + "/" + Year.ToString();
             return Date;
