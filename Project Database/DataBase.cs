@@ -182,7 +182,7 @@ namespace Project_Database
             string Date = Day.ToString() + "/" + Month.ToString() + "/" + Year.ToString();
             return Date;
         }
-        public static bool operator >(Date First, Date Second)
+        public static bool operator > (Date First, Date Second)
         {
             if(First.Year > Second.Year) return true;
             else if(First.Year == Second.Year)
@@ -195,7 +195,7 @@ namespace Project_Database
             }
             return false;
         }
-        public static bool operator <(Date First, Date Second)
+        public static bool operator < (Date First, Date Second)
         {
             if (First.Year < Second.Year) return true;
             else if (First.Year == Second.Year)

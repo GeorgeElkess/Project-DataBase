@@ -9,7 +9,7 @@ namespace Project_Database
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Trip());
+            Application.Run(new Place());
         }
     }
 }
