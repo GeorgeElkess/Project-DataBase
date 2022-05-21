@@ -19,6 +19,7 @@ namespace Project_Database
 
         private void COUNTRY_RATE_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
 
         }
@@ -89,7 +90,12 @@ namespace Project_Database
         
         private void SEARCH_Click(object sender, EventArgs e)
         {
-            string condition
+            string condition;
+        }
+
+        private void Country_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
