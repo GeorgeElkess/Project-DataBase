@@ -45,7 +45,7 @@
             // COUNTRY_NAME
             // 
             this.COUNTRY_NAME.Location = new System.Drawing.Point(846, 77);
-            this.COUNTRY_NAME.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.COUNTRY_NAME.Margin = new System.Windows.Forms.Padding(2);
             this.COUNTRY_NAME.Name = "COUNTRY_NAME";
             this.COUNTRY_NAME.Size = new System.Drawing.Size(219, 31);
             this.COUNTRY_NAME.TabIndex = 0;
@@ -53,7 +53,7 @@
             // ADD
             // 
             this.ADD.Location = new System.Drawing.Point(43, 437);
-            this.ADD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ADD.Margin = new System.Windows.Forms.Padding(2);
             this.ADD.Name = "ADD";
             this.ADD.Size = new System.Drawing.Size(115, 36);
             this.ADD.TabIndex = 1;
@@ -64,7 +64,7 @@
             // UPDATE
             // 
             this.UPDATE.Location = new System.Drawing.Point(207, 437);
-            this.UPDATE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UPDATE.Margin = new System.Windows.Forms.Padding(2);
             this.UPDATE.Name = "UPDATE";
             this.UPDATE.Size = new System.Drawing.Size(115, 36);
             this.UPDATE.TabIndex = 2;
@@ -75,7 +75,7 @@
             // SEARCH
             // 
             this.SEARCH.Location = new System.Drawing.Point(378, 437);
-            this.SEARCH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SEARCH.Margin = new System.Windows.Forms.Padding(2);
             this.SEARCH.Name = "SEARCH";
             this.SEARCH.Size = new System.Drawing.Size(115, 36);
             this.SEARCH.TabIndex = 3;
@@ -86,7 +86,7 @@
             // DELETE
             // 
             this.DELETE.Location = new System.Drawing.Point(554, 437);
-            this.DELETE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DELETE.Margin = new System.Windows.Forms.Padding(2);
             this.DELETE.Name = "DELETE";
             this.DELETE.Size = new System.Drawing.Size(115, 36);
             this.DELETE.TabIndex = 4;
@@ -107,7 +107,7 @@
             // COUNTRY_RATE
             // 
             this.COUNTRY_RATE.Location = new System.Drawing.Point(846, 302);
-            this.COUNTRY_RATE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.COUNTRY_RATE.Margin = new System.Windows.Forms.Padding(2);
             this.COUNTRY_RATE.Name = "COUNTRY_RATE";
             this.COUNTRY_RATE.Size = new System.Drawing.Size(219, 31);
             this.COUNTRY_RATE.TabIndex = 6;
@@ -136,7 +136,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(846, 188);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(219, 31);
             this.textBox1.TabIndex = 9;
@@ -168,9 +168,11 @@
             this.Controls.Add(this.UPDATE);
             this.Controls.Add(this.ADD);
             this.Controls.Add(this.COUNTRY_NAME);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Country";
             this.Text = "Country";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Country_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Country_FormClosed);
             this.Load += new System.EventHandler(this.Country_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

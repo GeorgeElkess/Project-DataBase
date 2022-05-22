@@ -155,10 +155,5 @@ namespace Project_Database
                 comboBox1.Items.Add(x[i][1]);
             }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

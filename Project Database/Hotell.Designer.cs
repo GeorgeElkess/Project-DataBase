@@ -216,6 +216,8 @@
             this.Controls.Add(this.hotel_id);
             this.Name = "Hotell";
             this.Text = "Hotell";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hotell_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Hotell_FormClosed);
             this.Load += new System.EventHandler(this.Hotell_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).EndInit();
             this.ResumeLayout(false);

@@ -49,6 +49,12 @@ namespace Project_Database
             dateTimePicker2.Text = "1/1/2000";
         }
 
+        void MakeCondition(ref string Condition, string Add)
+        {
+            if (Condition == "") Condition += Add;
+            else Condition += " and " + Add;
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0) return;
@@ -196,9 +202,9 @@ namespace Project_Database
             Headers.Add("Start Date");
             Headers.Add("End Date");
             string Condition = "";
-            if (textBox1.Text != "") Condition += "TripId = " + textBox1.Text + " ";
-            if (textBox2.Text != "") Condition += "CustomerId = " + textBox2.Text + " ";
-            if (textBox3.Text != "") Condition += "EmployeeId = " + textBox3.Text + " ";
+            if (textBox1.Text != "") MakeCondition(ref Condition, "TripId = " + textBox1.Text + " ");
+            if (textBox2.Text != "") MakeCondition(ref Condition, "CustomerId = " + textBox2.Text + " ");
+            if (textBox3.Text != "") MakeCondition(ref Condition, "EmployeeId = " + textBox3.Text + " ");
             if (comboBox1.SelectedIndex > 0)
             {
                 DataBase HotelData = new DataBase("Hotel");
@@ -226,7 +232,7 @@ namespace Project_Database
                 DataBase RoomData = new DataBase("Room");
                 List<List<string>> RoomName = RoomData.Read("RoomNumber = '" + RoomNumber + "'");
                 string RoomId = RoomName[0][0];
-                Condition += "RoomId = " + RoomId + " ";
+                MakeCondition(ref Condition, "RoomId = " + RoomId + " ");
             }
             Date StartingDate = new Date(dateTimePicker1.Text);
             Date EndingDate = new Date(dateTimePicker2.Text);
@@ -256,6 +262,18 @@ namespace Project_Database
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Trip_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void Trip_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }

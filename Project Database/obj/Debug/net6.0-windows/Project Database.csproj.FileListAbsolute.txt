@@ -107,3 +107,4 @@ C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Datab
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Hotell.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Trip.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Place.resources
+C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Visit.resources
