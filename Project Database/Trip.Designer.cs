@@ -248,6 +248,8 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Trip";
             this.Text = "Trip";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Trip_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Trip_FormClosed);
             this.Load += new System.EventHandler(this.Trip_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -21,5 +21,17 @@ namespace Project_Database
         {
 
         }
+
+        private void Employee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+        }
+
+        private void Employee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

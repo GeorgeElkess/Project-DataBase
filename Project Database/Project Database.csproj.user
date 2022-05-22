@@ -20,5 +20,8 @@
     <Compile Update="Trip.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Visit.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

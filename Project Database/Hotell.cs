@@ -155,5 +155,17 @@ namespace Project_Database
                 comboBox1.Items.Add(x[i][1]);
             }
         }
+
+        private void Hotell_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void Hotell_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+        }
     }
 }

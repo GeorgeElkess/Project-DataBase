@@ -20,6 +20,11 @@ namespace Project_Database
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
+        void MakeCondition(ref string Condition, string Add)
+        {
+            if (Condition == "") Condition += Add;
+            else Condition += " and " + Add;
+        }
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
@@ -46,8 +51,16 @@ namespace Project_Database
             Headers.Add("Name");
             Headers.Add("Address");
             Headers.Add("Cost Per Hour");
-            Headers.Add("Country Id");
-            dataGridView1.DataSource = data.GetTable(Headers, data.Read());
+            Headers.Add("Country Name");
+            List<List<string>> xz = data.Read();
+            for (int i = 0; i < xz.Count; i++)
+            {
+                string CountryId = xz[i][4];
+                DataBase CountryData = new DataBase("Country");
+                string CountryName = CountryData.Read("CountryId = " + CountryId)[0][1];
+                xz[i][4] = CountryName;
+            }
+            dataGridView1.DataSource = data.GetTable(Headers, xz);
         }
         void Initialize()
         {
@@ -93,12 +106,20 @@ namespace Project_Database
         private void button3_Click(object sender, EventArgs e)
         {
             string Condition = "";
-            if (textBox1.Text != "") Condition += "PlaceId = " + textBox1.Text;
-            if (textBox2.Text != "") Condition += " Name = '" + textBox2.Text + "'";
-            if (textBox3.Text != "") Condition += " Address = '" + textBox3.Text + "'";
-            if (textBox4.Text != "") Condition += " CostParHour = " + textBox4.Text + "";
-            if (comboBox1.SelectedIndex > 0) Condition += "CountryId = " + GetCountryId(comboBox1.SelectedItem.ToString());
-            dataGridView1.DataSource = data.GetTable(Headers, data.Read(Condition));
+            if (textBox1.Text != "") MakeCondition(ref Condition, "PlaceId = " + textBox1.Text);
+            if (textBox2.Text != "") MakeCondition(ref Condition, " Name = '" + textBox2.Text + "'");
+            if (textBox3.Text != "") MakeCondition(ref Condition, " Address = '" + textBox3.Text + "'");
+            if (textBox4.Text != "") MakeCondition(ref Condition, " CostParHour = " + textBox4.Text + "");
+            if (comboBox1.SelectedIndex > 0) MakeCondition(ref Condition, "CountryId = " + GetCountryId(comboBox1.SelectedItem.ToString()));
+            List<List<string>> x = data.Read(Condition);
+            for (int i = 0; i < x.Count; i++)
+            {
+                string CountryId = x[i][4];
+                DataBase CountryData = new DataBase("Country");
+                string CountryName = CountryData.Read("CountryId = " + CountryId)[0][1];
+                x[i][4] = CountryName;
+            }
+            dataGridView1.DataSource = data.GetTable(Headers, x);
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -136,6 +157,18 @@ namespace Project_Database
                 data.Update(Condition, Set);
                 Initialize();
             }
+        }
+
+        private void Place_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void Place_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }
