@@ -40,9 +40,9 @@
             this.Search = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.addresstext = new System.Windows.Forms.TextBox();
-            this.nametext = new System.Windows.Forms.TextBox();
             this.hotel_id = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Name = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +76,7 @@
             this.ratingtext.Size = new System.Drawing.Size(439, 34);
             this.ratingtext.TabIndex = 22;
             this.ratingtext.TextChanged += new System.EventHandler(this.ratingtext_TextChanged);
+            this.ratingtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ratingtext_KeyPress);
             // 
             // label4
             // 
@@ -166,15 +167,6 @@
             this.addresstext.TabIndex = 11;
             this.addresstext.TextChanged += new System.EventHandler(this.addresstext_TextChanged);
             // 
-            // nametext
-            // 
-            this.nametext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nametext.Location = new System.Drawing.Point(119, 87);
-            this.nametext.Name = "nametext";
-            this.nametext.Size = new System.Drawing.Size(438, 34);
-            this.nametext.TabIndex = 12;
-            this.nametext.TextChanged += new System.EventHandler(this.nametext_TextChanged);
-            // 
             // hotel_id
             // 
             this.hotel_id.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -183,6 +175,7 @@
             this.hotel_id.Size = new System.Drawing.Size(426, 34);
             this.hotel_id.TabIndex = 13;
             this.hotel_id.TextChanged += new System.EventHandler(this.hotel_id_TextChanged);
+            this.hotel_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotel_id_KeyPress);
             // 
             // comboBox1
             // 
@@ -192,7 +185,16 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(330, 23);
             this.comboBox1.TabIndex = 25;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // Name
+            // 
+            this.Name.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Name.Location = new System.Drawing.Point(118, 84);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(426, 34);
+            this.Name.TabIndex = 13;
+            this.Name.TextChanged += new System.EventHandler(this.hotel_id_TextChanged);
+            this.Name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotel_id_KeyPress);
             // 
             // Hotell
             // 
@@ -212,17 +214,22 @@
             this.Controls.Add(this.Search);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.addresstext);
-            this.Controls.Add(this.nametext);
+            this.Controls.Add(this.Name);
             this.Controls.Add(this.hotel_id);
             this.Name = "Hotell";
             this.Text = "Hotell";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hotell_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Hotell_FormClosed);
             this.Load += new System.EventHandler(this.Hotell_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Hotell_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
 
         #endregion
@@ -239,8 +246,8 @@
         private Button Search;
         private Button Add;
         private TextBox addresstext;
-        private TextBox nametext;
         private TextBox hotel_id;
         private ComboBox comboBox1;
+        private TextBox Name;
     }
 }

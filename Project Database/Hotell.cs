@@ -16,6 +16,8 @@ namespace Project_Database
         {
             InitializeComponent();
         }
+
+
         DataBase dataBase = new DataBase("Hotel");
         public string GetCountryId(string Name)
         {
@@ -108,7 +110,7 @@ namespace Project_Database
             Headrs.Add("Name");
             Headrs.Add("Address");
             Headrs.Add("Rating");
-            Headrs.Add("Countryid");
+            Headrs.Add("Country Name");
             string Condition = "";
             int t = 0;
             if (hotel_id.Text != "")
@@ -136,7 +138,15 @@ namespace Project_Database
                 Condition += (t == 1 ? "And " : "") + "CountryId = " +GetCountryId( comboBox1.SelectedItem.ToString());
                 t = 1;
             }
-            Screen_hotel.DataSource = dataBase.GetTable(Headrs, dataBase.Read(Condition));
+            List<List<string>> x = dataBase.Read(Condition);
+            for (int i = 0; i < x.Count; i++)
+            {
+                string CountryId = x[i][4];
+                DataBase CountryData = new DataBase("Country");
+                string CountryName = CountryData.Read("CountryId = " + CountryId)[0][1];
+                x[i][4] = CountryName;
+            }
+            Screen_hotel.DataSource = dataBase.GetTable(Headrs, x);
 
         }
 
@@ -154,6 +164,16 @@ namespace Project_Database
             {
                 comboBox1.Items.Add(x[i][1]);
             }
+        }
+
+        private void ratingtext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
+        }
+
+        private void hotel_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
     }
 }

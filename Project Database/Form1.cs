@@ -77,5 +77,21 @@ namespace Project_Database
             visit.ShowDialog();
             this.Close();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Categorie Categorie = new Categorie();
+            this.Hide();
+            Categorie.ShowDialog();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Room Room = new Room();
+            this.Hide();
+            Room.ShowDialog();
+            this.Close();
+        }
     }
 }
