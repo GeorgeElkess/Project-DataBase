@@ -45,7 +45,7 @@ namespace Project_Database
         public List<List<string>> Read(string Condition = "")
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * From " + TableName +( (Condition != "") ? " Where " + Condition : ""));
+            SqlCommand cmd = new SqlCommand("Select * From " + TableName + ((Condition != "") ? " Where " + Condition : ""));
             cmd.Connection = con;
             SqlDataReader rdr = cmd.ExecuteReader();
             List<List<string>> Data = new List<List<string>>();
@@ -115,6 +115,98 @@ namespace Project_Database
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+    }
+    class Date
+    {
+        public int Day;
+        public int Month;
+        public int Year;
+        public Date() { }
+        public Date(string Date)
+        {
+            string date = "";
+            int c = 0;
+            int pos = 0;
+            int pos2 = 0;
+            int pos3 = 0;
+            for (int i = 0; i < Date.Length; i++)
+            {
+                if (Date[i] == ' ')
+                {
+                    c++;
+                    if (c == 1) pos2 = i;
+                    if (c == 2) pos = i;
+                    if (c == 3) pos3 = i;
+                }
+            }
+            pos++;
+            for (int i = pos; i < Date.Length; i++)
+            {
+                if (Date[i] == ',') break;
+                date += Date[i];
+            }
+            this.Day = int.Parse(date);
+            date = "";
+            if (Date.Contains("January")) date += "1";
+            else if (Date.Contains("February")) date += "2";
+            else if (Date.Contains("March")) date += "3";
+            else if (Date.Contains("April")) date += "4";
+            else if (Date.Contains("May")) date += "5";
+            else if (Date.Contains("June")) date += "6";
+            else if (Date.Contains("July")) date += "7";
+            else if (Date.Contains("August")) date += "8";
+            else if (Date.Contains("September")) date += "9";
+            else if (Date.Contains("October")) date += "10";
+            else if (Date.Contains("November")) date += "11";
+            else if (Date.Contains("December")) date += "12";
+            Month = int.Parse(date);
+            date = "";
+            for (int i = pos3 + 1; i < Date.Length; i++)
+            {
+                date += Date[i];
+            }
+            this.Year = int.Parse(date);
+        }
+        public static Date FromDataBase(string Date)
+        {
+            string[] temp = Date.Split("/");
+            Date x = new Date();
+            x.Day = int.Parse(temp[0]);
+            x.Month = int.Parse(temp[1]);
+            x.Year = int.Parse(temp[2]);
+            return x;
+        }
+        public string ToFormatedString()
+        {
+            string Date = Day.ToString() + "/" + Month.ToString() + "/" + Year.ToString();
+            return Date;
+        }
+        public static bool operator > (Date First, Date Second)
+        {
+            if(First.Year > Second.Year) return true;
+            else if(First.Year == Second.Year)
+            {
+                if(First.Month > Second.Month) return true;
+                else if(First.Month == Second.Month)
+                {
+                    if(First.Day > Second.Day) return true;
+                }
+            }
+            return false;
+        }
+        public static bool operator < (Date First, Date Second)
+        {
+            if (First.Year < Second.Year) return true;
+            else if (First.Year == Second.Year)
+            {
+                if (First.Month < Second.Month) return true;
+                else if (First.Month == Second.Month)
+                {
+                    if (First.Day < Second.Day) return true;
+                }
+            }
+            return false;
         }
     }
 }
