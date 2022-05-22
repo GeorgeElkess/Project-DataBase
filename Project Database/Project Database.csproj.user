@@ -20,6 +20,9 @@
     <Compile Update="Place.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Trip.cs">
       <SubType>Form</SubType>
     </Compile>
