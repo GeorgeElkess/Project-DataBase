@@ -41,6 +41,8 @@
             this.costpardaytext = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.categorie_id = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +71,7 @@
             // ratingtext
             // 
             this.ratingtext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ratingtext.Location = new System.Drawing.Point(126, 80);
+            this.ratingtext.Location = new System.Drawing.Point(121, 132);
             this.ratingtext.Name = "ratingtext";
             this.ratingtext.Size = new System.Drawing.Size(439, 34);
             this.ratingtext.TabIndex = 34;
@@ -89,7 +91,7 @@
             // 
             this.costparday.AutoSize = true;
             this.costparday.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costparday.Location = new System.Drawing.Point(1, 151);
+            this.costparday.Location = new System.Drawing.Point(0, 183);
             this.costparday.Name = "costparday";
             this.costparday.Size = new System.Drawing.Size(134, 32);
             this.costparday.TabIndex = 32;
@@ -99,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(21, 82);
+            this.label2.Location = new System.Drawing.Point(16, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 32);
             this.label2.TabIndex = 31;
@@ -148,7 +150,7 @@
             // costpardaytext
             // 
             this.costpardaytext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costpardaytext.Location = new System.Drawing.Point(141, 151);
+            this.costpardaytext.Location = new System.Drawing.Point(140, 183);
             this.costpardaytext.Name = "costpardaytext";
             this.costpardaytext.Size = new System.Drawing.Size(424, 34);
             this.costpardaytext.TabIndex = 26;
@@ -173,6 +175,25 @@
             this.categorie_id.TabIndex = 37;
             this.categorie_id.TextChanged += new System.EventHandler(this.categorie_id_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(16, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 32);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Rating";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(121, 77);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(439, 34);
+            this.textBox1.TabIndex = 34;
+            this.textBox1.TextChanged += new System.EventHandler(this.ratingtext_TextChanged);
+            // 
             // Categorie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -182,8 +203,10 @@
             this.Controls.Add(this.categorie_id);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Screen_hotel);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ratingtext);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.costparday);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Delete);
@@ -215,5 +238,7 @@
         private TextBox costpardaytext;
         private Label label5;
         private TextBox categorie_id;
+        private Label label1;
+        private TextBox textBox1;
     }
 }
