@@ -16,7 +16,7 @@ namespace Project_Database
         {
             InitializeComponent();
         }
-        DataBase dataBase = new DataBase("Categorield");
+        DataBase dataBase = new DataBase("Categorie");
         private void Categorie_Load(object sender, EventArgs e)
         {
             DataBase Country = new DataBase("Hotel");
