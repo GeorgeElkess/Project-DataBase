@@ -41,7 +41,7 @@ namespace Project_Database
             }
             else
             {
-                Message.Error("Name IS Already Exist");
+                Message.Error("Error");
             }
         }
         private void costpardaytext_TextChanged(object sender, EventArgs e)
@@ -63,7 +63,6 @@ namespace Project_Database
         {
             List<string> Headrs = new List<string>();
             Headrs.Add("CategorieId");
-            Headrs.Add("Name");
             Headrs.Add("Rating");
             Headrs.Add("CostParDay");
             Headrs.Add("Hotelid");
@@ -86,7 +85,7 @@ namespace Project_Database
             }
             if (comboBox1.SelectedIndex > 0)
             {
-                Condition += (t == 1 ? "And " : "") + "CountryId = " + GetHotelid(comboBox1.SelectedItem.ToString());
+                Condition += (t == 1 ? "And " : "") + "Hotelid = " + GetHotelid(comboBox1.SelectedItem.ToString());
                 t = 1;
             }
             Screen_hotel.DataSource = dataBase.GetTable(Headrs, dataBase.Read(Condition));
@@ -102,7 +101,7 @@ namespace Project_Database
         {
             if (categorie_id.Text != "")
             {
-                dataBase.Delete("HotelId= " + categorie_id.Text);
+                dataBase.Delete("CategorieId= " + categorie_id.Text);
             }
             else
             {
@@ -115,16 +114,21 @@ namespace Project_Database
             
             if (categorie_id.Text != "" && ratingtext.Text != "")
             {
-                dataBase.Update("HotelId = " + categorie_id.Text, "Rating = '" + ratingtext.Text + "'");
+                dataBase.Update("CategorieId = " + categorie_id.Text, "Rating = '" + ratingtext.Text + "'");
             }
             if (categorie_id.Text != "" && costpardaytext.Text != "")
             {
-                dataBase.Update("HotelId = " + categorie_id.Text, "Address = '" + costpardaytext.Text + "'");
+                dataBase.Update("CategorieId = " + categorie_id.Text, "CostParDay = '" + costpardaytext.Text + "'");
             }
             if (categorie_id.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0)
             {
-                dataBase.Update("HotelId = " + categorie_id.Text, "CountryId = " + GetHotelid(comboBox1.SelectedItem.ToString()));
+                dataBase.Update("CategorieId = " + categorie_id.Text, "CountryId = " + GetHotelid(comboBox1.SelectedItem.ToString()));
             }
+        }
+
+        private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
