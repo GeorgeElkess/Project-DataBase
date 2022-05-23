@@ -89,7 +89,42 @@ namespace Project_Database
         
         private void SEARCH_Click(object sender, EventArgs e)
         {
-            string condition
+            List<List<string>> Datachec;
+            List<List<string>> Datachec2;
+            
+            if (textBox1.Text!=""&&COUNTRY_NAME.Text==""&&COUNTRY_RATE.Text=="")
+            {
+                Datachec = dataBase.Read("CountryId=" + textBox1.Text);
+                dataBase.GetTable(Datachec);
+            }
+            if(textBox1.Text == "" && COUNTRY_NAME.Text != "" && COUNTRY_RATE.Text == "")
+            {
+                Datachec = dataBase.Read("CountryName=" + COUNTRY_NAME.Text);
+                dataBase.GetTable(Datachec);
+            }
+            if(textBox1.Text == "" && COUNTRY_NAME.Text == "" && COUNTRY_RATE.Text != "")
+            {
+                Datachec = dataBase.Read("CountryRate=" + COUNTRY_RATE.Text);
+                dataBase.GetTable(Datachec);
+            }
+            if(textBox1.Text != "" && COUNTRY_NAME.Text != "" && COUNTRY_RATE.Text == "")
+            {
+                Datachec = dataBase.Read("CountryId=" + textBox1.Text);
+                Datachec2 = dataBase.Read("CountryName=" + COUNTRY_NAME.Text);
+                dataBase.GetTable(Datachec,Datachec2);
+            }
+            if(textBox1.Text != "" && COUNTRY_NAME.Text == "" && COUNTRY_RATE.Text != "")
+            {
+                Datachec = dataBase.Read("CountryId=" + textBox1.Text);
+                Datachec2 = dataBase.Read("CountryRate=" + COUNTRY_RATE.Text;
+                dataBase.GetTable(Datachec, Datachec2);
+            }
+            if(textBox1.Text == "" && COUNTRY_NAME.Text != "" && COUNTRY_RATE.Text != "")
+            {
+                Datachec = dataBase.Read("CountryName=" + COUNTRY_NAME.Text);
+                Datachec2 = dataBase.Read("CountryRate=" + COUNTRY_RATE.Text;
+                dataBase.GetTable(Datachec, Datachec2);
+            }
         }
     }
 }
