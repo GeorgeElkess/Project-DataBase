@@ -93,5 +93,13 @@ namespace Project_Database
             Room.ShowDialog();
             this.Close();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Invoice Invoice = new Invoice();
+            this.Hide();
+            Invoice.ShowDialog();
+            this.Close();
+        }
     }
 }

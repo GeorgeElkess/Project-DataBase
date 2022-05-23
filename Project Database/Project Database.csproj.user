@@ -17,6 +17,9 @@
     <Compile Update="Hotell.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Place.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -182,20 +182,20 @@ namespace Project_Database
             string Date = Day.ToString() + "/" + Month.ToString() + "/" + Year.ToString();
             return Date;
         }
-        public static bool operator > (Date First, Date Second)
+        public static bool operator >(Date First, Date Second)
         {
-            if(First.Year > Second.Year) return true;
-            else if(First.Year == Second.Year)
+            if (First.Year > Second.Year) return true;
+            else if (First.Year == Second.Year)
             {
-                if(First.Month > Second.Month) return true;
-                else if(First.Month == Second.Month)
+                if (First.Month > Second.Month) return true;
+                else if (First.Month == Second.Month)
                 {
-                    if(First.Day > Second.Day) return true;
+                    if (First.Day > Second.Day) return true;
                 }
             }
             return false;
         }
-        public static bool operator < (Date First, Date Second)
+        public static bool operator <(Date First, Date Second)
         {
             if (First.Year < Second.Year) return true;
             else if (First.Year == Second.Year)
@@ -207,6 +207,37 @@ namespace Project_Database
                 }
             }
             return false;
+        }
+        public static long operator -(Date First, Date Second)
+        {
+            long TotalDay = 0;
+            if (First.Year > Second.Year)
+            {
+                TotalDay = First.Year - Second.Year;
+                TotalDay *= 365;
+            }
+            else
+            {
+                TotalDay = Second.Year - First.Year;
+                TotalDay *= 365;
+            }
+            if (First.Month > Second.Month)
+            {
+                TotalDay += (First.Month - Second.Month) * 30;
+            }
+            else
+            {
+                TotalDay += (Second.Month - First.Month) * 30;
+            }
+            if (First.Day > Second.Day)
+            {
+                TotalDay += First.Day - Second.Day;
+            }
+            else
+            {
+                TotalDay += Second.Day - First.Day;
+            }
+            return TotalDay;
         }
     }
 }
