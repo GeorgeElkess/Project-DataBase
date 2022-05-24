@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_Database
 {
-    public partial class Hotell : Form
+    public partial class Hotel : Form
     {
-        public Hotell()
+        public Hotel()
         {
             InitializeComponent();
         }
