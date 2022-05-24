@@ -35,9 +35,9 @@ namespace Project_Database
         }
         private void Add_Click(object sender, EventArgs e)
         {
-            if (costpardaytext.Text != "" && ratingtext.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0&& categorie_id.Text!="")
+            if (Nametext.Text!="" && costpardaytext.Text != "" && ratingtext.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0&& categorie_id.Text!="")
             {
-                dataBase.Insert("'" + categorie_id.Text + "', '" + costpardaytext.Text + "', " + "', '" + ratingtext.Text + "', " + GetHotelid(comboBox1.SelectedItem.ToString()));
+                dataBase.Insert("'"+Nametext.Text + "', '" + categorie_id.Text + "', '" + costpardaytext.Text + "', " + "', '" + ratingtext.Text + "', " + GetHotelid(comboBox1.SelectedItem.ToString()));
             }
             else
             {
@@ -63,6 +63,7 @@ namespace Project_Database
         {
             List<string> Headrs = new List<string>();
             Headrs.Add("CategorieId");
+            Headrs.Add("Name");
             Headrs.Add("Rating");
             Headrs.Add("CostParDay");
             Headrs.Add("Hotelid");
@@ -71,6 +72,11 @@ namespace Project_Database
             if (categorie_id.Text != "")
             {
                 Condition += "CategorieId = " + categorie_id.Text;
+                t = 1;
+            }
+            if (Nametext.Text != "")
+            {
+                Condition += "Name = " + Nametext.Text;
                 t = 1;
             }
             if (ratingtext.Text != "")
@@ -112,6 +118,10 @@ namespace Project_Database
         private void Update_Click(object sender, EventArgs e)
         {
             
+            if (categorie_id.Text != "" && Nametext.Text != "")
+            {
+                dataBase.Update("CategorieId = " + categorie_id.Text, "Name = '" + Nametext.Text + "'");
+            }
             if (categorie_id.Text != "" && ratingtext.Text != "")
             {
                 dataBase.Update("CategorieId = " + categorie_id.Text, "Rating = '" + ratingtext.Text + "'");
@@ -127,6 +137,16 @@ namespace Project_Database
         }
 
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Nametext_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -42,7 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.categorie_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Nametext = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,29 +181,30 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(16, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Rating";
+            this.label1.Text = "Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // Nametext
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(121, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(439, 34);
-            this.textBox1.TabIndex = 34;
-            this.textBox1.TextChanged += new System.EventHandler(this.ratingtext_TextChanged);
+            this.Nametext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Nametext.Location = new System.Drawing.Point(100, 84);
+            this.Nametext.Name = "Nametext";
+            this.Nametext.Size = new System.Drawing.Size(460, 34);
+            this.Nametext.TabIndex = 39;
+            this.Nametext.TextChanged += new System.EventHandler(this.Nametext_TextChanged);
             // 
             // Categorie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1419, 450);
+            this.Controls.Add(this.Nametext);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.categorie_id);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Screen_hotel);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ratingtext);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -239,6 +240,6 @@
         private Label label5;
         private TextBox categorie_id;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox Nametext;
     }
 }
