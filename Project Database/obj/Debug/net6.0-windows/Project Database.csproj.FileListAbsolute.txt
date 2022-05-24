@@ -56,3 +56,4 @@ C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Datab
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Hotel.resources
 >>>>>>> 3922d1b229112341c51bd43a55468e8dcf2e4f31
 C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Hotel.resources
+C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Login.resources

@@ -176,19 +176,7 @@ namespace Project_Database
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            int t = 1;
-            for (int i = 0; i <= 30; i++)
-            {
-                Day.Items.Add(t.ToString());
-                t++;
-            }
-
-            int w = 1900;
-            for (int i = 0; i < 1100; i++)
-            {
-                Year.Items.Add(w.ToString());
-                w++;
-            }
+            
         }
     }
 }
