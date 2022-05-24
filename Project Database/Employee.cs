@@ -167,9 +167,9 @@ namespace Project_Database
             {
                 MakeCondition(ref condition, "LastName=''" + Last_Name.Text + "'");
             }
-            DateTime x = DateTime.Now;
-            x = x.AddDays(1);
-            if (Date_Of_Birth.Text != x.ToLongDateString())
+            DateTime t = DateTime.Now;
+            t = t.AddDays(1);
+            if (Date_Of_Birth.Text != t.ToLongDateString())
             {
                 MakeCondition(ref condition, "LastName=''" + Last_Name.Text + "'");
             }
@@ -189,19 +189,29 @@ namespace Project_Database
             {
                 MakeCondition(ref condition, "Salary=''" + Salary.Text + "'");
             }
-            Screen_hotel.DataSource = dataBase.GetTable(Headers, dataBase.Read(condition));
+            List<List<string>> x = dataBase.Read(condition);
+            for (int i = 0; i < x.Count; i++)
+            {
+                x[i].RemoveAt(x[i].Count - 1);
+            }
+            Screen_hotel.DataSource = dataBase.GetTable(Headers,x);
         }
 
         private void Employee_Load(object sender, EventArgs e)
-        {
-
-
+        {s
             DateTime x = DateTime.Now;
             x = x.AddDays(1);
             Date Now = new Date(x.ToLongDateString());
             Now.ToFormatedString();
-
             Date_Of_Birth.Text = x.ToLongDateString();
+            Headers.Add("Employee Id");
+            Headers.Add("First Name");
+            Headers.Add("Last Name");
+            Headers.Add("Date of Birth");
+            Headers.Add("Address");
+            Headers.Add("Job Title");
+            Headers.Add("Working Hours");
+            Headers.Add("Salary");
         }
 
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
