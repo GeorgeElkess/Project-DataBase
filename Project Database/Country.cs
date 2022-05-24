@@ -90,7 +90,26 @@ namespace Project_Database
         
         private void SEARCH_Click(object sender, EventArgs e)
         {
-            string condition
+            
         }
+
+        private void Country_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Country_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void Country_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+
+        }
+
     }
 }
