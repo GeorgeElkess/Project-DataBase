@@ -29,12 +29,7 @@ namespace Project_Database
 
         private void Day_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int t = 1;
-            for(int i=0;i<=30;i++)
-            {
-                Day.Items.Add(i.ToString("t"));
-                t++;
-            }
+           
         }
 
         private void Month_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,12 +44,7 @@ namespace Project_Database
 
         private void Year_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int w = 1900;
-            for (int i = 0; i < 1100; i++)
-            {
-                Year.Items.Add(i.ToString("w"));
-                w++;
-            }
+           
         }
         DataBase dataBase = new DataBase("Employee");
         private void Add_Click(object sender, EventArgs e)
@@ -182,6 +172,23 @@ namespace Project_Database
         private void Search_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            int t = 1;
+            for (int i = 0; i <= 30; i++)
+            {
+                Day.Items.Add(t.ToString());
+                t++;
+            }
+
+            int w = 1900;
+            for (int i = 0; i < 1100; i++)
+            {
+                Year.Items.Add(w.ToString());
+                w++;
+            }
         }
     }
 }

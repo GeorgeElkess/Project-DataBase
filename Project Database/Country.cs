@@ -87,10 +87,18 @@ namespace Project_Database
             }
         }
 
-        
+        void MakeCondition(ref string Condition, string Add)
+        {
+            if (Condition == "") Condition += Add;
+            else Condition += " and " + Add;
+        }
         private void SEARCH_Click(object sender, EventArgs e)
         {
-            
+              string condition; 
+           // if ()
+            //{
+
+            //}
         }
 
         private void Country_Load(object sender, EventArgs e)
@@ -111,5 +119,9 @@ namespace Project_Database
 
         }
 
+        private void COUNTRY_NAME_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
