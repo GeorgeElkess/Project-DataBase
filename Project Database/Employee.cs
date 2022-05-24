@@ -29,13 +29,13 @@ namespace Project_Database
 
         private void Day_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Month_SelectedIndexChanged(object sender, EventArgs e)
         {
             int r = 1;
-            for(int i=0;i<13;i++)
+            for (int i = 0; i < 13; i++)
             {
                 Month.Items.Add(i.ToString("r"));
                 r++;
@@ -44,18 +44,18 @@ namespace Project_Database
 
         private void Year_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
         DataBase dataBase = new DataBase("Employee");
         private void Add_Click(object sender, EventArgs e)
         {
-            if(First_Name.Text!=""&&Last_Name.Text!=""&&Day.Text!=""&&Month.Text!=""&&Year.Text!=""
-                &&Address.Text!=""&&Job_Title.Text!=""&&Salary.Text!=""&&Working_Hours.Text!="")
+            if (First_Name.Text != "" && Last_Name.Text != "" && Day.Text != "" && Month.Text != "" && Year.Text != ""
+                && Address.Text != "" && Job_Title.Text != "" && Salary.Text != "" && Working_Hours.Text != "")
             {
                 List<List<string>> datachec = new List<List<string>>();
                 datachec = dataBase.Read("First Name= '" + First_Name.Text + "'");
-                if(datachec.Count == 0)
-            {
+                if (datachec.Count == 0)
+                {
                     dataBase.Insert("'" + First_Name.Text + "', " + Last_Name.Text + "', " + Day.Text + "', " + Month.Text + "', " + Year.Text + "', " +
                         Address.Text + "', " + Job_Title.Text + "', " + Salary.Text + "', " + Working_Hours.Text + "', ");
                 }
@@ -64,12 +64,12 @@ namespace Project_Database
                     Message.Error("This Employee IS Already Exist");
                 }
             }
-            
+
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (Employee_ID.Text!= "")
+            if (Employee_ID.Text != "")
             {
                 dataBase.Delete("EmployeeId=" + Employee_ID.Text);
             }
@@ -117,7 +117,7 @@ namespace Project_Database
                     dataBase.Update("Employee Id = " + Employee_ID.Text, "Month = " + Month.Text);
                 }
             }
-            else if(Employee_ID.Text != "" && Year.Text != "")
+            else if (Employee_ID.Text != "" && Year.Text != "")
             {
                 List<List<string>> Datachec;
                 Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
@@ -126,7 +126,7 @@ namespace Project_Database
                     dataBase.Update("Employee Id = " + Employee_ID.Text, "Year = " + Year.Text);
                 }
             }
-            else if(Employee_ID.Text != "" && Address.Text != "")
+            else if (Employee_ID.Text != "" && Address.Text != "")
             {
                 List<List<string>> Datachec;
                 Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
@@ -135,7 +135,7 @@ namespace Project_Database
                     dataBase.Update("Employee Id = " + Employee_ID.Text, "Address = " + Address.Text);
                 }
             }
-            else if(Employee_ID.Text != "" && Job_Title.Text != "")
+            else if (Employee_ID.Text != "" && Job_Title.Text != "")
             {
                 List<List<string>> Datachec;
                 Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
@@ -144,7 +144,7 @@ namespace Project_Database
                     dataBase.Update("Employee Id = " + Employee_ID.Text, "Job Title = " + Job_Title.Text);
                 }
             }
-            else if(Employee_ID.Text != "" && Salary.Text != "")
+            else if (Employee_ID.Text != "" && Salary.Text != "")
             {
                 List<List<string>> Datachec;
                 Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
@@ -153,7 +153,7 @@ namespace Project_Database
                     dataBase.Update("Employee Id = " + Employee_ID.Text, "Salary = " + Salary.Text);
                 }
             }
-            else if(Employee_ID.Text != "" && Working_Hours.Text != "")
+            else if (Employee_ID.Text != "" && Working_Hours.Text != "")
             {
                 List<List<string>> Datachec;
                 Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
@@ -166,9 +166,9 @@ namespace Project_Database
             {
                 Message.Error("UPDATE CANT BE DONE");
             }
-            
+
         }
-        List<string> Headers =new List<string>();
+        List<string> Headers = new List<string>();
         private void Search_Click(object sender, EventArgs e)
         {
 
@@ -176,7 +176,7 @@ namespace Project_Database
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

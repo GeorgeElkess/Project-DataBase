@@ -49,11 +49,11 @@
             // Screen_hotel
             // 
             this.Screen_hotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Screen_hotel.Location = new System.Drawing.Point(824, 47);
+            this.Screen_hotel.Location = new System.Drawing.Point(811, 28);
             this.Screen_hotel.Name = "Screen_hotel";
             this.Screen_hotel.RowHeadersWidth = 62;
             this.Screen_hotel.RowTemplate.Height = 33;
-            this.Screen_hotel.Size = new System.Drawing.Size(1147, 658);
+            this.Screen_hotel.Size = new System.Drawing.Size(857, 518);
             this.Screen_hotel.TabIndex = 24;
             this.Screen_hotel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Screen_hotel_CellContentClick);
             // 
@@ -61,20 +61,20 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 47);
+            this.label5.Location = new System.Drawing.Point(12, 37);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 48);
+            this.label5.Size = new System.Drawing.Size(148, 48);
             this.label5.TabIndex = 23;
-            this.label5.Text = " Hotel Id";
+            this.label5.Text = "Hotel Id";
             // 
             // ratingtext
             // 
-            this.ratingtext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ratingtext.Location = new System.Drawing.Point(170, 237);
+            this.ratingtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ratingtext.Location = new System.Drawing.Point(228, 176);
             this.ratingtext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ratingtext.Name = "ratingtext";
-            this.ratingtext.Size = new System.Drawing.Size(625, 47);
+            this.ratingtext.Size = new System.Drawing.Size(555, 48);
             this.ratingtext.TabIndex = 22;
             this.ratingtext.TextChanged += new System.EventHandler(this.ratingtext_TextChanged);
             this.ratingtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ratingtext_KeyPress);
@@ -83,7 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(29, 463);
+            this.label4.Location = new System.Drawing.Point(13, 332);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(186, 48);
@@ -94,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(39, 345);
+            this.label3.Location = new System.Drawing.Point(13, 256);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 48);
@@ -105,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(47, 237);
+            this.label2.Location = new System.Drawing.Point(13, 173);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 48);
@@ -116,7 +116,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(49, 137);
+            this.label1.Location = new System.Drawing.Point(13, 97);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 48);
@@ -125,21 +125,23 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(601, 575);
+            this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Delete.Location = new System.Drawing.Point(581, 416);
             this.Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(189, 130);
+            this.Delete.Size = new System.Drawing.Size(190, 130);
             this.Delete.TabIndex = 14;
-            this.Delete.Text = "delete";
+            this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Update
             // 
-            this.Update.Location = new System.Drawing.Point(389, 575);
+            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Update.Location = new System.Drawing.Point(368, 416);
             this.Update.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(204, 130);
+            this.Update.Size = new System.Drawing.Size(205, 130);
             this.Update.TabIndex = 15;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
@@ -147,10 +149,11 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(210, 575);
+            this.Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Search.Location = new System.Drawing.Point(189, 416);
             this.Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(170, 130);
+            this.Search.Size = new System.Drawing.Size(171, 130);
             this.Search.TabIndex = 16;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
@@ -158,10 +161,11 @@
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(37, 575);
+            this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Add.Location = new System.Drawing.Point(13, 416);
             this.Add.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(164, 130);
+            this.Add.Size = new System.Drawing.Size(168, 130);
             this.Add.TabIndex = 17;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = true;
@@ -169,40 +173,41 @@
             // 
             // addresstext
             // 
-            this.addresstext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addresstext.Location = new System.Drawing.Point(186, 342);
+            this.addresstext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addresstext.Location = new System.Drawing.Point(228, 259);
             this.addresstext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addresstext.Name = "addresstext";
-            this.addresstext.Size = new System.Drawing.Size(604, 47);
+            this.addresstext.Size = new System.Drawing.Size(558, 48);
             this.addresstext.TabIndex = 11;
             this.addresstext.TextChanged += new System.EventHandler(this.addresstext_TextChanged);
             // 
             // hotel_id
             // 
-            this.hotel_id.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.hotel_id.Location = new System.Drawing.Point(172, 59);
+            this.hotel_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hotel_id.Location = new System.Drawing.Point(228, 40);
             this.hotel_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.hotel_id.Name = "hotel_id";
-            this.hotel_id.Size = new System.Drawing.Size(607, 47);
+            this.hotel_id.Size = new System.Drawing.Size(558, 48);
             this.hotel_id.TabIndex = 13;
             this.hotel_id.TextChanged += new System.EventHandler(this.hotel_id_TextChanged);
             this.hotel_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotel_id_KeyPress);
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(221, 478);
+            this.comboBox1.Location = new System.Drawing.Point(225, 332);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(470, 33);
+            this.comboBox1.Size = new System.Drawing.Size(558, 56);
             this.comboBox1.TabIndex = 25;
             // 
-            // Name
+            // nametext
             // 
-            this.nametext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nametext.Location = new System.Drawing.Point(169, 140);
+            this.nametext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nametext.Location = new System.Drawing.Point(228, 100);
             this.nametext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nametext.Name = "Name";
-            this.nametext.Size = new System.Drawing.Size(607, 47);
+            this.nametext.Name = "nametext";
+            this.nametext.Size = new System.Drawing.Size(555, 48);
             this.nametext.TabIndex = 13;
             this.nametext.TextChanged += new System.EventHandler(this.hotel_id_TextChanged);
             this.nametext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotel_id_KeyPress);
@@ -211,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 740);
+            this.ClientSize = new System.Drawing.Size(1683, 568);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Screen_hotel);
             this.Controls.Add(this.label5);

@@ -24,18 +24,34 @@ namespace Project_Database
             Headers.Add("Trip Id");
             Headers.Add("Customer Id");
             Headers.Add("Employee Id");
-            Headers.Add("Room Id");
+            Headers.Add("Hotel Name");
+            Headers.Add("Room Number");
             Headers.Add("Start Date");
             Headers.Add("End Date");
-            dataGridView1.DataSource = data.GetTable(Headers, data.Read());
+            List<List<string>> x = data.Read();
+            for (int i = 0; i < x.Count; i++)
+            {
+                string RoomId = x[i][3];
+                DataBase RoomData = new DataBase("Room");
+                string RoomNumber = RoomData.Read("RoomId = " + RoomId) [0][2];
+                x[i][3] = RoomNumber;
+                string CatigoryId = RoomData.Read("RoomId = " + RoomId)[0][4];
+                DataBase CatigoryData = new DataBase("Categorie");
+                string HotelId = CatigoryData.Read("CategorieId = " + CatigoryId)[0][4];
+                DataBase HotelData = new DataBase("Hotel");
+                string HotelName = HotelData.Read("HotelId = " + HotelId)[0][1];
+                x[i].Insert(3, HotelName);
+            }
+            dataGridView1.DataSource = data.GetTable(Headers, x);
             DataBase Hotel = new DataBase("Hotel");
-            List<List<string>> x = Hotel.Read();
+            x = Hotel.Read();
             comboBox1.Items.Add("Non");
             foreach (List<string> item in x)
             {
                 comboBox1.Items.Add(item[1]);
             }
             comboBox2.Items.Add("Non");
+            Initialize();
         }
 
         void Initialize()
@@ -198,7 +214,8 @@ namespace Project_Database
             Headers.Add("Trip Id");
             Headers.Add("Customer Id");
             Headers.Add("Employee Id");
-            Headers.Add("Room Id");
+            Headers.Add("Hotel Name");
+            Headers.Add("Room Number");
             Headers.Add("Start Date");
             Headers.Add("End Date");
             string Condition = "";
@@ -213,18 +230,23 @@ namespace Project_Database
                 DataBase RoomData = new DataBase("Room");
                 List<List<string>> Rooms = RoomData.Read("HotelId = " + HotelId);
                 List<List<string>> Trips = data.Read();
+                bool flag = false;
                 for (int i = 0; i < Trips.Count; i++)
                 {
                     bool IsThere = false;
                     for (int j = 0; j < Rooms.Count; j++)
                     {
-                        if (Rooms[j][0] == Trips[i][3]) IsThere = true;
+                        if (Rooms[j][0] == Trips[i][3])
+                        {
+                            if (!flag) MakeCondition(ref Condition, "(RoomId = " + Rooms[j][0]);
+                            else Condition += " or RoomId = " + Rooms[j][0] + " ";
+                            flag = true;
+                        }
                     }
                     if (!IsThere) Trips.RemoveAt(i--);
                 }
-                dataGridView1.DataSource = data.GetTable(Headers, Trips);
-                Initialize();
-                return;
+                if (flag) Condition += ") ";
+                else MakeCondition(ref Condition, "TripId = 0");
             }
             if (comboBox2.SelectedIndex > 0)
             {
@@ -238,7 +260,21 @@ namespace Project_Database
             Date EndingDate = new Date(dateTimePicker2.Text);
             if (StartingDate.ToFormatedString() != "1/1/2000") Condition += "StartDate = '" + StartingDate.ToFormatedString() + "'";
             if (EndingDate.ToFormatedString() != "1/1/2000") Condition += "EndDate = '" + EndingDate.ToFormatedString() + "'";
-            dataGridView1.DataSource = data.GetTable(Headers, data.Read(Condition));
+            List<List<string>> x = data.Read(Condition);
+            for (int i = 0; i < x.Count; i++)
+            {
+                string RoomId = x[i][3];
+                DataBase RoomData = new DataBase("Room");
+                string RoomNumber = RoomData.Read("RoomId = " + RoomId)[0][2];
+                x[i][3] = RoomNumber;
+                string CatigoryId = RoomData.Read("RoomId = " + RoomId)[0][4];
+                DataBase CatigoryData = new DataBase("Categorie");
+                string HotelId = CatigoryData.Read("CategorieId = " + CatigoryId)[0][4];
+                DataBase HotelData = new DataBase("Hotel");
+                string HotelName = HotelData.Read("HotelId = " + HotelId)[0][1];
+                x[i].Insert(3, HotelName);
+            }
+            dataGridView1.DataSource = data.GetTable(Headers, x);
             Initialize();
         }
 
