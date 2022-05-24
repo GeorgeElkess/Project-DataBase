@@ -168,7 +168,7 @@ namespace Project_Database
             }
             
         }
-
+        List<string> Headers =new List<string>();
         private void Search_Click(object sender, EventArgs e)
         {
 

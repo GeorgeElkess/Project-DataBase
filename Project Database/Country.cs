@@ -92,18 +92,31 @@ namespace Project_Database
             if (Condition == "") Condition += Add;
             else Condition += " and " + Add;
         }
+        List<string> Headers = new List<string>();
+
         private void SEARCH_Click(object sender, EventArgs e)
         {
-              string condition; 
-           // if ()
-            //{
-
-            //}
+              string condition=""; 
+            if (COUNTRY_NAME.Text!="")
+            {
+                MakeCondition(ref condition,"Name ='"+COUNTRY_NAME.Text+"'"); 
+            }
+            if(textBox1.Text!="")
+            {
+                MakeCondition(ref condition, "CountryId =" + textBox1.Text);
+            }
+            if (COUNTRY_RATE.Text!="")
+            {
+                MakeCondition(ref condition, "Rating='" + COUNTRY_RATE.Text+"'");
+            }
+            dataGridView1.DataSource = dataBase.GetTable(Headers, dataBase.Read(condition));
         }
-
+        
         private void Country_Load(object sender, EventArgs e)
         {
-
+            Headers.Add("Country ID");      
+            Headers.Add("Country Name");
+            Headers.Add("Country Rate");
         }
 
         private void Country_FormClosing(object sender, FormClosingEventArgs e)

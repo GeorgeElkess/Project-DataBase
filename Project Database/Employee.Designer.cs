@@ -52,6 +52,8 @@
             this.Year = new System.Windows.Forms.ComboBox();
             this.Month = new System.Windows.Forms.ComboBox();
             this.Day = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Password = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1357,6 +1359,22 @@
             this.Day.Size = new System.Drawing.Size(79, 40);
             this.Day.TabIndex = 32;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(252, 17);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 32);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Password";
+            // 
+            // Password
+            // 
+            this.Password.Location = new System.Drawing.Point(252, 67);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(200, 39);
+            this.Password.TabIndex = 1;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -1365,6 +1383,7 @@
             this.Controls.Add(this.Year);
             this.Controls.Add(this.Month);
             this.Controls.Add(this.Day);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Update);
@@ -1378,6 +1397,7 @@
             this.Controls.Add(this.Working_Hours);
             this.Controls.Add(this.Salary);
             this.Controls.Add(this.Last_Name);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.Employee_ID);
             this.Controls.Add(this.First_Name);
             this.Controls.Add(this.label2);
@@ -1421,5 +1441,7 @@
         private ComboBox Year;
         private ComboBox Month;
         private ComboBox Day;
+        private Label label10;
+        private TextBox Password;
     }
 }
