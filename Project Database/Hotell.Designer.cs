@@ -42,7 +42,7 @@
             this.addresstext = new System.Windows.Forms.TextBox();
             this.hotel_id = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Name = new System.Windows.Forms.TextBox();
+            this.nametext = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,14 +198,14 @@
             // 
             // Name
             // 
-            this.Name.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name.Location = new System.Drawing.Point(169, 140);
-            this.Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(607, 47);
-            this.Name.TabIndex = 13;
-            this.Name.TextChanged += new System.EventHandler(this.hotel_id_TextChanged);
-            this.Name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotel_id_KeyPress);
+            this.nametext.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nametext.Location = new System.Drawing.Point(169, 140);
+            this.nametext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nametext.Name = "Name";
+            this.nametext.Size = new System.Drawing.Size(607, 47);
+            this.nametext.TabIndex = 13;
+            this.nametext.TextChanged += new System.EventHandler(this.hotel_id_TextChanged);
+            this.nametext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotel_id_KeyPress);
             // 
             // Hotel
             // 
@@ -225,9 +225,10 @@
             this.Controls.Add(this.Search);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.addresstext);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.nametext);
             this.Controls.Add(this.hotel_id);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Hotel";
             this.Text = "Hotel";
             this.Load += new System.EventHandler(this.Hotell_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).EndInit();
@@ -259,6 +260,6 @@
         private TextBox addresstext;
         private TextBox hotel_id;
         private ComboBox comboBox1;
-        private TextBox Name;
+        private TextBox nametext;
     }
 }

@@ -16,7 +16,6 @@ C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Datab
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Country.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Employee.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Form1.resources
-C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Hotell.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Invoice.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Place.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Room.resources
@@ -32,3 +31,5 @@ C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Datab
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\ref\Project Database.dll
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.pdb
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.genruntimeconfig.cache
+C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Customer.resources
+C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Hotel.resources

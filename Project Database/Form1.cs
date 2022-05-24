@@ -8,41 +8,12 @@ namespace Project_Database
         {
             InitializeComponent();
         }
-        DataBase DataBase = new DataBase("Employee");
-        int c = 0;
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             Country country = new Country();
             this.Hide();
             country.ShowDialog();
-            this.Close();
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            Employee employee = new Employee();
-            this.Hide();
-            employee.ShowDialog();
             this.Close();
         }
 
@@ -99,6 +70,14 @@ namespace Project_Database
             Invoice Invoice = new Invoice();
             this.Hide();
             Invoice.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Employee employee = new Employee();
+            this.Hide();
+            employee.ShowDialog();
             this.Close();
         }
     }
