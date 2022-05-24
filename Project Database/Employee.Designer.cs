@@ -49,11 +49,9 @@
             this.Delete = new System.Windows.Forms.Button();
             this.Employee_ID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.Year = new System.Windows.Forms.ComboBox();
-            this.Month = new System.Windows.Forms.ComboBox();
-            this.Day = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
+            this.Date_Of_Birth = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,6 +191,7 @@
             this.Screen_hotel.RowTemplate.Height = 33;
             this.Screen_hotel.Size = new System.Drawing.Size(638, 451);
             this.Screen_hotel.TabIndex = 25;
+            this.Screen_hotel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Screen_hotel_CellContentClick);
             // 
             // Add
             // 
@@ -256,6 +255,7 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "Employee ID";
             // 
+<<<<<<< HEAD
             // Year
             // 
             this.Year.FormattingEnabled = true;
@@ -1381,6 +1381,8 @@
             this.Day.Size = new System.Drawing.Size(62, 33);
             this.Day.TabIndex = 32;
             // 
+=======
+>>>>>>> 7301efde57310ed6a637acb5a6ee05372e02bf8a
             // label10
             // 
             this.label10.AutoSize = true;
@@ -1399,14 +1401,26 @@
             this.Password.Size = new System.Drawing.Size(155, 31);
             this.Password.TabIndex = 1;
             // 
+            // Date_Of_Birth
+            // 
+            this.Date_Of_Birth.Location = new System.Drawing.Point(38, 303);
+            this.Date_Of_Birth.Name = "Date_Of_Birth";
+            this.Date_Of_Birth.Size = new System.Drawing.Size(400, 39);
+            this.Date_Of_Birth.TabIndex = 30;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1078, 588);
             this.Controls.Add(this.Year);
             this.Controls.Add(this.Month);
             this.Controls.Add(this.Day);
+=======
+            this.ClientSize = new System.Drawing.Size(1402, 752);
+            this.Controls.Add(this.Date_Of_Birth);
+>>>>>>> 7301efde57310ed6a637acb5a6ee05372e02bf8a
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Delete);
@@ -1463,10 +1477,8 @@
         private Button Delete;
         private TextBox Employee_ID;
         private Label label9;
-        private ComboBox Year;
-        private ComboBox Month;
-        private ComboBox Day;
         private Label label10;
         private TextBox Password;
+        private DateTimePicker Date_Of_Birth;
     }
 }
