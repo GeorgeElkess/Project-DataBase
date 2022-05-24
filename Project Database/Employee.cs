@@ -198,7 +198,7 @@ namespace Project_Database
         }
 
         private void Employee_Load(object sender, EventArgs e)
-        {s
+        {
             DateTime x = DateTime.Now;
             x = x.AddDays(1);
             Date Now = new Date(x.ToLongDateString());
