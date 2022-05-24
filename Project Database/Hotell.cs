@@ -16,16 +16,24 @@ namespace Project_Database
         {
             InitializeComponent();
         }
+
+
         DataBase dataBase = new DataBase("Hotel");
+        public string GetCountryId(string Name)
+        {
+            DataBase dataBase = new DataBase("Country");
+            List<List<string>> x = dataBase.Read("Name = '" + Name + "'");
+            return x[0][0];
+        }
         private void Add_Click(object sender, EventArgs e)
         {
-            if (nametext.Text != "" && ratingtext.Text != "" && addresstext.Text != "")
+            if (nametext.Text != "" && ratingtext.Text != "" && addresstext.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0)
             {
                 List<List<string>> Datachec;
                 Datachec = dataBase.Read("Name= '" + nametext.Text + "'");
                 if (Datachec.Count == 0)
                 {
-                    dataBase.Insert("'" + nametext.Text + "', '" + addresstext.Text + "', '" + ratingtext.Text + "'");
+                    dataBase.Insert("'" + nametext.Text + "', '" + addresstext.Text + "', '" + ratingtext.Text + "', " + GetCountryId(comboBox1.SelectedItem.ToString()));
                 }
                 else
                 {
@@ -63,32 +71,23 @@ namespace Project_Database
             if (hotel_id.Text != "" && nametext.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("HotelId" + nametext.Text);
+                Datachec = dataBase.Read("HotelId = " + hotel_id.Text);
                 if (Datachec.Count != 0)
                 {
                     dataBase.Update("HotelId = " + hotel_id.Text, "Name = '" + nametext.Text + "'");
                 }
             }
-            else
-            {
-                Message.Error("UPDATE CAN'T UPDATE NAME");
-            }
-
             if (hotel_id.Text != "" && ratingtext.Text != "")
             {
                 dataBase.Update("HotelId = " + hotel_id.Text, "Rating = '" + ratingtext.Text + "'");
-            }
-            else
-            {
-                Message.Error("UPDATE CAN'T UPDATE RATING");
             }
             if (hotel_id.Text != "" && addresstext.Text != "")
             {
                 dataBase.Update("HotelId = " + hotel_id.Text, "Address = '" + addresstext.Text + "'");
             }
-            else
+            if (hotel_id.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0)
             {
-                Message.Error("UPDATE CAN'T UPDATE ADDRESS");
+                dataBase.Update("HotelId = " + hotel_id.Text, "CountryId = " + GetCountryId(comboBox1.SelectedItem.ToString()));
             }
         }
 
@@ -111,39 +110,70 @@ namespace Project_Database
             Headrs.Add("Name");
             Headrs.Add("Address");
             Headrs.Add("Rating");
-            Headrs.Add("Countryid");
+            Headrs.Add("Country Name");
             string Condition = "";
             int t = 0;
-            if (nametext.Text != "" || ratingtext.Text != "" || addresstext.Text != "" || hotel_id.Text != "")
+            if (hotel_id.Text != "")
             {
-                if (hotel_id.Text != "")
-                {
-                    Condition += "HotelId = " + hotel_id.Text;
-                    t = 1;
-                }
-                if (ratingtext.Text != "")
-                {
-                    Condition += (t == 1 ? "And " : "") + "Rating = " + ratingtext.Text;
-                    t = 1;
-                }
-                if (addresstext.Text != "")
-                {
-                    Condition += (t == 1 ? "And " : "") + "Address = " + addresstext.Text;
-                    t = 1;
-                }
-                if (nametext.Text != "")
-                {
-                    Condition += (t == 1 ? "And " : "") + "Name = " + nametext.Text;
-                    t = 1;
-                }
+                Condition += "HotelId = " + hotel_id.Text;
+                t = 1;
             }
-            Screen_hotel.DataSource = dataBase.GetTable(Headrs, dataBase.Read(Condition));
+            if (ratingtext.Text != "")
+            {
+                Condition += (t == 1 ? "And " : "") + "Rating = " + ratingtext.Text;
+                t = 1;
+            }
+            if (addresstext.Text != "")
+            {
+                Condition += (t == 1 ? "And " : "") + "Address = '" + addresstext.Text + "'";
+                t = 1;
+            }
+            if (nametext.Text != "")
+            {
+                Condition += (t == 1 ? "And " : "") + "Name = '" + nametext.Text + "'";
+                t = 1;
+            }
+            if (comboBox1.SelectedIndex > 0)
+            {
+                Condition += (t == 1 ? "And " : "") + "CountryId = " +GetCountryId( comboBox1.SelectedItem.ToString());
+                t = 1;
+            }
+            List<List<string>> x = dataBase.Read(Condition);
+            for (int i = 0; i < x.Count; i++)
+            {
+                string CountryId = x[i][4];
+                DataBase CountryData = new DataBase("Country");
+                string CountryName = CountryData.Read("CountryId = " + CountryId)[0][1];
+                x[i][4] = CountryName;
+            }
+            Screen_hotel.DataSource = dataBase.GetTable(Headrs, x);
 
         }
 
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Hotell_Load(object sender, EventArgs e)
+        {
+            DataBase Country = new DataBase("Country");
+            List<List<string>> x = Country.Read();
+            comboBox1.Items.Add("Non");
+            for (int i = 0; i < x.Count; i++)
+            {
+                comboBox1.Items.Add(x[i][1]);
+            }
+        }
+
+        private void ratingtext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
+        }
+
+        private void hotel_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
     }
 }

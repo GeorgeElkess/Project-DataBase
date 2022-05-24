@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Categorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Country.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -12,6 +15,21 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Hotell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Place.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Trip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Visit.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
