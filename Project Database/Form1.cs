@@ -19,7 +19,7 @@ namespace Project_Database
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Hotel hotell = new Hotel();
+            Hotell hotell = new Hotell();
             this.Hide();
             hotell.ShowDialog();
             this.Close();
