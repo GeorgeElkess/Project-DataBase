@@ -36,6 +36,9 @@ namespace Project_Database
                 if (Datachec.Count==0)
                 {
                     dataBase.Insert("'"+COUNTRY_NAME.Text + "', " + COUNTRY_RATE.Text);
+                    COUNTRY_NAME.Text = String.Empty;
+                    COUNTRY_RATE.Text = String.Empty;
+                    textBox1.Text = String.Empty;
                 }
                 else
                 {
@@ -58,6 +61,9 @@ namespace Project_Database
                 if(Datachec.Count!=0)
                 {
                     dataBase.Update("CountryId = " + textBox1.Text, "Name = '" + COUNTRY_NAME.Text+"'");
+                    COUNTRY_NAME.Text = String.Empty;
+                    COUNTRY_RATE.Text = String.Empty;
+                    textBox1.Text = String.Empty;
                 }
             }
             else if(textBox1.Text != "" && COUNTRY_RATE.Text != "")
@@ -67,6 +73,9 @@ namespace Project_Database
                 if (Datachec.Count != 0)
                 {
                     dataBase.Update("CountryId = " + textBox1.Text, "Rating = " + COUNTRY_RATE.Text);
+                    COUNTRY_NAME.Text = String.Empty;
+                    COUNTRY_RATE.Text = String.Empty;
+                    textBox1.Text = String.Empty;
                 }
             }
             else
@@ -80,6 +89,9 @@ namespace Project_Database
             if(textBox1.Text!="")
             {
                 dataBase.Delete("CountryId=" + textBox1.Text);
+                COUNTRY_NAME.Text = String.Empty;
+                COUNTRY_RATE.Text = String.Empty;
+                textBox1.Text = String.Empty;
             }
             else
             {

@@ -19,7 +19,7 @@ namespace Project_Database
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            Hotell hotell = new Hotell();
+            Hotel hotell = new Hotel();
             this.Hide();
             hotell.ShowDialog();
             this.Close();
@@ -79,6 +79,11 @@ namespace Project_Database
             this.Hide();
             employee.ShowDialog();
             this.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

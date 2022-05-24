@@ -154,6 +154,7 @@ namespace Project_Database
         }
         private void Search_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             string condition = "";
             if (Employee_ID.Text != "")
             {
@@ -207,6 +208,9 @@ namespace Project_Database
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+=======
+            
+>>>>>>> e6c447271193e5588610f34433b5994ba0cc7db6
         }
     }
 }
