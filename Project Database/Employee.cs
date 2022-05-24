@@ -45,14 +45,14 @@ namespace Project_Database
         private void Add_Click(object sender, EventArgs e)
         {
             if (First_Name.Text != "" && Last_Name.Text != "" && Date_Of_Birth.Text != ""
-                && Address.Text != "" && Job_Title.Text != "" && Salary.Text != "" && Working_Hours.Text != "")
+                && Address.Text != "" && Job_Title.Text != "" && Salary.Text != "" && Working_Hours.Text != "" &&Password.Text!="")
             {
                 List<List<string>> datachec = new List<List<string>>();
                 datachec = dataBase.Read("First Name= '" + First_Name.Text + "'");
                 if (datachec.Count == 0)
                 {
                     dataBase.Insert("'" + First_Name.Text + "', " + Last_Name.Text + "', " + Date_Of_Birth.Text + "', " +
-                        Address.Text + "', " + Job_Title.Text + "', " + Salary.Text + "', " + Working_Hours.Text + "', ");
+                        Address.Text + "', " + Job_Title.Text + "', " + Salary.Text + "', " + Working_Hours.Text + "', "+ Password.Text+ "', ");
                 }
                 else
                 {
@@ -138,6 +138,15 @@ namespace Project_Database
                 if (Datachec.Count != 0)
                 {
                     dataBase.Update("Employee Id = " + Employee_ID.Text, "Working Hours = " + Working_Hours.Text);
+                }
+            }
+            else if(Employee_ID.Text != "" && Password.Text != "")
+            {
+                List<List<string>> Datachec;
+                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                if (Datachec.Count != 0)
+                {
+                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Password = " + Password.Text);
                 }
             }
             else
