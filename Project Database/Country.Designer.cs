@@ -44,7 +44,7 @@
             // 
             // COUNTRY_NAME
             // 
-            this.COUNTRY_NAME.Location = new System.Drawing.Point(1100, 99);
+            this.COUNTRY_NAME.Location = new System.Drawing.Point(31, 246);
             this.COUNTRY_NAME.Name = "COUNTRY_NAME";
             this.COUNTRY_NAME.Size = new System.Drawing.Size(284, 39);
             this.COUNTRY_NAME.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // ADD
             // 
-            this.ADD.Location = new System.Drawing.Point(56, 559);
+            this.ADD.Location = new System.Drawing.Point(456, 518);
             this.ADD.Name = "ADD";
             this.ADD.Size = new System.Drawing.Size(150, 46);
             this.ADD.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // UPDATE
             // 
-            this.UPDATE.Location = new System.Drawing.Point(269, 559);
+            this.UPDATE.Location = new System.Drawing.Point(709, 518);
             this.UPDATE.Name = "UPDATE";
             this.UPDATE.Size = new System.Drawing.Size(150, 46);
             this.UPDATE.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // SEARCH
             // 
-            this.SEARCH.Location = new System.Drawing.Point(491, 559);
+            this.SEARCH.Location = new System.Drawing.Point(970, 518);
             this.SEARCH.Name = "SEARCH";
             this.SEARCH.Size = new System.Drawing.Size(150, 46);
             this.SEARCH.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // DELETE
             // 
-            this.DELETE.Location = new System.Drawing.Point(720, 559);
+            this.DELETE.Location = new System.Drawing.Point(1242, 518);
             this.DELETE.Name = "DELETE";
             this.DELETE.Size = new System.Drawing.Size(150, 46);
             this.DELETE.TabIndex = 4;
@@ -93,8 +93,8 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 29);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(411, 27);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
@@ -103,7 +103,7 @@
             // 
             // COUNTRY_RATE
             // 
-            this.COUNTRY_RATE.Location = new System.Drawing.Point(1100, 387);
+            this.COUNTRY_RATE.Location = new System.Drawing.Point(31, 413);
             this.COUNTRY_RATE.Name = "COUNTRY_RATE";
             this.COUNTRY_RATE.Size = new System.Drawing.Size(284, 39);
             this.COUNTRY_RATE.TabIndex = 6;
@@ -112,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1100, 54);
+            this.label1.Location = new System.Drawing.Point(31, 188);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 32);
             this.label1.TabIndex = 7;
@@ -121,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1100, 329);
+            this.label2.Location = new System.Drawing.Point(31, 351);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 32);
             this.label2.TabIndex = 8;
@@ -129,7 +129,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1100, 241);
+            this.textBox1.Location = new System.Drawing.Point(31, 79);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(284, 39);
             this.textBox1.TabIndex = 9;
@@ -138,7 +138,7 @@
             // COUNTRY_ID
             // 
             this.COUNTRY_ID.AutoSize = true;
-            this.COUNTRY_ID.Location = new System.Drawing.Point(1100, 189);
+            this.COUNTRY_ID.Location = new System.Drawing.Point(31, 27);
             this.COUNTRY_ID.Name = "COUNTRY_ID";
             this.COUNTRY_ID.Size = new System.Drawing.Size(150, 32);
             this.COUNTRY_ID.TabIndex = 10;
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1485, 931);
+            this.ClientSize = new System.Drawing.Size(1485, 625);
             this.Controls.Add(this.COUNTRY_ID);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
