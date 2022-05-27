@@ -41,6 +41,20 @@ namespace Project_Database
         {
 
         }
+        void Initialize()
+        {
+            Employee_ID.Text = String.Empty;
+            First_Name.Text = String.Empty;
+            Last_Name.Text = String.Empty;
+            DateTime t = DateTime.Now;
+            t = t.AddDays(1);
+            Date_Of_Birth.Text = t.ToLongDateString();
+            Job_Title.Text = String.Empty;
+            Address.Text = String.Empty;
+            Salary.Text = String.Empty;
+            Working_Hours.Text = String.Empty;
+            Password.Text = String.Empty;
+        }
         DataBase dataBase = new DataBase("Employee");
         private void Add_Click(object sender, EventArgs e)
         {
@@ -48,18 +62,20 @@ namespace Project_Database
                 && Address.Text != "" && Job_Title.Text != "" && Salary.Text != "" && Working_Hours.Text != "" &&Password.Text!="")
             {
                 List<List<string>> datachec = new List<List<string>>();
-                datachec = dataBase.Read("First Name= '" + First_Name.Text + "'");
+                datachec = dataBase.Read("FirstName= '" + First_Name.Text + "'");
                 if (datachec.Count == 0)
                 {
-                    dataBase.Insert("'" + First_Name.Text + "', " + Last_Name.Text + "', " + Date_Of_Birth.Text + "', " +
-                        Address.Text + "', " + Job_Title.Text + "', " + Salary.Text + "', " + Working_Hours.Text + "', "+ Password.Text+ "', ");
+                    Date date = new Date(Date_Of_Birth.Text);
+                    dataBase.Insert("'" + First_Name.Text + "', '" + Last_Name.Text + "', '" + date.ToFormatedString() + "', '" +
+                        Address.Text + "', '" + Job_Title.Text + "', " + Salary.Text + ", '" + Working_Hours.Text + "', '"+ Password.Text + "'");
+                    Initialize();
                 }
                 else
                 {
                     Message.Error("This Employee IS Already Exist");
                 }
             }
-
+            else Message.Error("Canot Add");
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -67,6 +83,7 @@ namespace Project_Database
             if (Employee_ID.Text != "")
             {
                 dataBase.Delete("EmployeeId=" + Employee_ID.Text);
+                Initialize();
             }
             else
             {
@@ -79,81 +96,80 @@ namespace Project_Database
             if (Employee_ID.Text != "" && First_Name.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "First Name = '" + First_Name.Text + "'");
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "FirstName = '" + First_Name.Text + "'");
                 }
             }
-            else if (Employee_ID.Text != "" && Last_Name.Text != "")
+            if (Employee_ID.Text != "" && Last_Name.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Rating = " + Last_Name.Text);
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "LastName = '" + Last_Name.Text + "'");
                 }
             }
-            else if (Employee_ID.Text != "" && Date_Of_Birth.Text != "")
+            DateTime t = DateTime.Now;
+            t = t.AddDays(1);
+            if (Employee_ID.Text != "" && Date_Of_Birth.Text != t.ToLongDateString())
             {
+                Date date = new Date(Date_Of_Birth.Text);
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Date_Of_Birth = " + Date_Of_Birth.Text);
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "DateOfBirth = '" + date.ToFormatedString() + "'");
                 }
             }
 
-            else if (Employee_ID.Text != "" && Address.Text != "")
+            if (Employee_ID.Text != "" && Address.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Address = " + Address.Text);
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "Address = '" + Address.Text + "'");
                 }
             }
-            else if (Employee_ID.Text != "" && Job_Title.Text != "")
+            if (Employee_ID.Text != "" && Job_Title.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Job Title = " + Job_Title.Text);
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "JobTitle = '" + Job_Title.Text + "'");
                 }
             }
-            else if (Employee_ID.Text != "" && Salary.Text != "")
+            if (Employee_ID.Text != "" && Salary.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Salary = " + Salary.Text);
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "Salary = " + Salary.Text);
                 }
             }
-            else if (Employee_ID.Text != "" && Working_Hours.Text != "")
+            if (Employee_ID.Text != "" && Working_Hours.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Working Hours = " + Working_Hours.Text);
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "WorkingHours = '" + Working_Hours.Text + "'");
                 }
             }
-            else if(Employee_ID.Text != "" && Password.Text != "")
+            if(Employee_ID.Text != "" && Password.Text != "")
             {
                 List<List<string>> Datachec;
-                Datachec = dataBase.Read("Employee Id=" + Employee_ID.Text);
+                Datachec = dataBase.Read("EmployeeId=" + Employee_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("Employee Id = " + Employee_ID.Text, "Password = " + Password.Text);
+                    dataBase.Update("EmployeeId = " + Employee_ID.Text, "Password = '" + Password.Text + "'");
                 }
             }
-            else
-            {
-                Message.Error("UPDATE CANT BE DONE");
-            }
-
+            Initialize();
         }
         List<string> Headers = new List<string>();
         void MakeCondition(ref string Condition, string Add)
@@ -174,29 +190,30 @@ namespace Project_Database
             }
             if (Last_Name.Text != "")
             {
-                MakeCondition(ref condition, "LastName=''" + Last_Name.Text + "'");
+                MakeCondition(ref condition, "LastName='" + Last_Name.Text + "'");
             }
             DateTime t = DateTime.Now;
             t = t.AddDays(1);
             if (Date_Of_Birth.Text != t.ToLongDateString())
             {
-                MakeCondition(ref condition, "LastName=''" + Last_Name.Text + "'");
+                Date date = new Date(Date_Of_Birth.Text);
+                MakeCondition(ref condition, "DateOfBirth='" + date.ToFormatedString() + "'");
             }
             if (Address.Text != "")
             {
-                MakeCondition(ref condition, "Address=''" + Address.Text + "'");
+                MakeCondition(ref condition, "Address='" + Address.Text + "'");
             }
             if (Job_Title.Text != "")
             {
-                MakeCondition(ref condition, "JobTitle=''" + Job_Title.Text + "'");
+                MakeCondition(ref condition, "JobTitle='" + Job_Title.Text + "'");
             }
             if (Working_Hours.Text != "")
             {
-                MakeCondition(ref condition, "WorkingHours=''" + Working_Hours.Text + "'");
+                MakeCondition(ref condition, "WorkingHours='" + Working_Hours.Text + "'");
             }
             if (Salary.Text != "")
             {
-                MakeCondition(ref condition, "Salary=''" + Salary.Text + "'");
+                MakeCondition(ref condition, "Salary=" + Salary.Text);
             }
             List<List<string>> x = dataBase.Read(condition);
             for (int i = 0; i < x.Count; i++)
@@ -208,19 +225,15 @@ namespace Project_Database
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            DateTime x = DateTime.Now;
-            x = x.AddDays(1);
-            Date Now = new Date(x.ToLongDateString());
-            Now.ToFormatedString();
-            Date_Of_Birth.Text = x.ToLongDateString();
             Headers.Add("Employee Id");
             Headers.Add("First Name");
             Headers.Add("Last Name");
             Headers.Add("Date of Birth");
             Headers.Add("Address");
             Headers.Add("Job Title");
-            Headers.Add("Working Hours");
             Headers.Add("Salary");
+            Headers.Add("Working Hours");
+            Initialize();
         }
 
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
