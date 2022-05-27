@@ -57,3 +57,20 @@ C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Datab
 >>>>>>> 3922d1b229112341c51bd43a55468e8dcf2e4f31
 C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Hotel.resources
 C:\Users\George Elkomos\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Login.resources
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.exe
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.deps.json
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.runtimeconfig.json
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Project Database.pdb
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\Microsoft.ApplicationInsights.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project_Database.Login.resources
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.csproj.CopyComplete
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\refint\Project Database.dll
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\Project Database.genruntimeconfig.cache
+C:\Users\Maichael Atef\Source\Repos\GeorgeElkess\Project-DataBase\Project Database\obj\Debug\net6.0-windows\ref\Project Database.dll
