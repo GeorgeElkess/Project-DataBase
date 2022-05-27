@@ -75,7 +75,7 @@ namespace Project_Database
                     Message.Error("This Employee IS Already Exist");
                 }
             }
-            else Message.Error("Canot Add");
+            else Message.Error("Can't be Add");
         }
 
         private void Delete_Click(object sender, EventArgs e)

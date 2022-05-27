@@ -37,9 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Sex = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Day = new System.Windows.Forms.ComboBox();
-            this.Month = new System.Windows.Forms.ComboBox();
-            this.Year = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +46,7 @@
             this.Search = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
+            this.Date_Of_Birth = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.Screen_hotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,33 +128,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Date Of Birth";
             // 
-            // Day
-            // 
-            this.Day.FormattingEnabled = true;
-            this.Day.Location = new System.Drawing.Point(28, 496);
-            this.Day.Name = "Day";
-            this.Day.Size = new System.Drawing.Size(58, 40);
-            this.Day.TabIndex = 3;
-            this.Day.SelectedIndexChanged += new System.EventHandler(this.Day_SelectedIndexChanged);
-            // 
-            // Month
-            // 
-            this.Month.FormattingEnabled = true;
-            this.Month.Location = new System.Drawing.Point(126, 496);
-            this.Month.Name = "Month";
-            this.Month.Size = new System.Drawing.Size(77, 40);
-            this.Month.TabIndex = 3;
-            this.Month.SelectedIndexChanged += new System.EventHandler(this.Month_SelectedIndexChanged);
-            // 
-            // Year
-            // 
-            this.Year.FormattingEnabled = true;
-            this.Year.Location = new System.Drawing.Point(236, 496);
-            this.Year.Name = "Year";
-            this.Year.Size = new System.Drawing.Size(102, 40);
-            this.Year.TabIndex = 3;
-            this.Year.SelectedIndexChanged += new System.EventHandler(this.Year_SelectedIndexChanged);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -218,6 +189,7 @@
             this.Search.TabIndex = 27;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // Update
             // 
@@ -227,6 +199,7 @@
             this.Update.TabIndex = 27;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // Delete
             // 
@@ -236,20 +209,26 @@
             this.Delete.TabIndex = 27;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // Date_Of_Birth
+            // 
+            this.Date_Of_Birth.Location = new System.Drawing.Point(28, 502);
+            this.Date_Of_Birth.Name = "Date_Of_Birth";
+            this.Date_Of_Birth.Size = new System.Drawing.Size(400, 39);
+            this.Date_Of_Birth.TabIndex = 31;
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1337, 829);
+            this.Controls.Add(this.Date_Of_Birth);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.ADD);
             this.Controls.Add(this.Screen_hotel);
-            this.Controls.Add(this.Year);
-            this.Controls.Add(this.Month);
-            this.Controls.Add(this.Day);
             this.Controls.Add(this.Sex);
             this.Controls.Add(this.Last_Name);
             this.Controls.Add(this.label3);
@@ -282,9 +261,6 @@
         private Label label4;
         private CheckedListBox Sex;
         private Label label5;
-        private ComboBox Day;
-        private ComboBox Month;
-        private ComboBox Year;
         private Label label6;
         private TextBox Address;
         private Label label7;
@@ -294,5 +270,6 @@
         private Button Search;
         private Button Update;
         private Button Delete;
+        private DateTimePicker Date_Of_Birth;
     }
 }
