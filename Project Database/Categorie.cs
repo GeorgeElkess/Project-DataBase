@@ -26,6 +26,7 @@ namespace Project_Database
             {
                 comboBox1.Items.Add(x[i][1]);
             }
+            Initalize();
         }
         public string GetHotelid(string Name)
         {
@@ -33,11 +34,20 @@ namespace Project_Database
             List<List<string>> x = dataBase.Read("Name = '" + Name + "'");
             return x[0][0];
         }
+        void Initalize()
+        {
+            Nametext.Text = String.Empty;
+            costpardaytext.Text = String.Empty;
+            ratingtext.Text = String.Empty;
+            comboBox1.SelectedIndex = 0;
+            categorie_id.Text = String.Empty;
+        }
         private void Add_Click(object sender, EventArgs e)
         {
-            if (Nametext.Text!="" && costpardaytext.Text != "" && ratingtext.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0&& categorie_id.Text!="")
+            if (Nametext.Text!="" && costpardaytext.Text != "" && ratingtext.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0)
             {
-                dataBase.Insert("'"+Nametext.Text + "', '" + categorie_id.Text + "', '" + costpardaytext.Text + "', " + "', '" + ratingtext.Text + "', " + GetHotelid(comboBox1.SelectedItem.ToString()));
+                dataBase.Insert($"'{Nametext.Text}', '{ratingtext.Text}', {costpardaytext.Text}, {GetHotelid(comboBox1.SelectedItem.ToString())}");
+                Initalize();
             }
             else
             {
@@ -66,7 +76,7 @@ namespace Project_Database
             Headrs.Add("Name");
             Headrs.Add("Rating");
             Headrs.Add("CostParDay");
-            Headrs.Add("Hotelid");
+            Headrs.Add("Hotel Name");
             string Condition = "";
             int t = 0;
             if (categorie_id.Text != "")
@@ -76,17 +86,17 @@ namespace Project_Database
             }
             if (Nametext.Text != "")
             {
-                Condition += "Name = " + Nametext.Text;
+                Condition += "Name = '" + Nametext.Text + "'";
                 t = 1;
             }
             if (ratingtext.Text != "")
             {
-                Condition += (t == 1 ? "And " : "") + "Rating = " + ratingtext.Text;
+                Condition += (t == 1 ? "And " : "") + "Rating = '" + ratingtext.Text + "'";
                 t = 1;
             }
             if (costpardaytext.Text != "")
             {
-                Condition += (t == 1 ? "And " : "") + "CostParDay = '" + costpardaytext.Text + "'";
+                Condition += (t == 1 ? "And " : "") + "CostParDay = " + costpardaytext.Text;
                 t = 1;
             }
             if (comboBox1.SelectedIndex > 0)
@@ -94,8 +104,16 @@ namespace Project_Database
                 Condition += (t == 1 ? "And " : "") + "Hotelid = " + GetHotelid(comboBox1.SelectedItem.ToString());
                 t = 1;
             }
-            Screen_hotel.DataSource = dataBase.GetTable(Headrs, dataBase.Read(Condition));
-
+            List<List<string>> x = dataBase.Read(Condition);
+            foreach (var item in x)
+            {
+                string HotelId = item[4];
+                DataBase HotelData = new DataBase("Hotel");
+                string HotelName = HotelData.Read("HotelId = " + HotelId)[0][1];
+                item[4] = HotelName;
+            }
+            Screen_hotel.DataSource = dataBase.GetTable(Headrs, x);
+            Initalize();
         }
 
         private void categorie_id_TextChanged(object sender, EventArgs e)
@@ -108,6 +126,7 @@ namespace Project_Database
             if (categorie_id.Text != "")
             {
                 dataBase.Delete("CategorieId= " + categorie_id.Text);
+                Initalize();
             }
             else
             {
@@ -117,7 +136,6 @@ namespace Project_Database
 
         private void Update_Click(object sender, EventArgs e)
         {
-            
             if (categorie_id.Text != "" && Nametext.Text != "")
             {
                 dataBase.Update("CategorieId = " + categorie_id.Text, "Name = '" + Nametext.Text + "'");
@@ -128,12 +146,13 @@ namespace Project_Database
             }
             if (categorie_id.Text != "" && costpardaytext.Text != "")
             {
-                dataBase.Update("CategorieId = " + categorie_id.Text, "CostParDay = '" + costpardaytext.Text + "'");
+                dataBase.Update("CategorieId = " + categorie_id.Text, "CostParDay = " + costpardaytext.Text);
             }
             if (categorie_id.Text != "" && comboBox1.SelectedIndex != -1 && comboBox1.SelectedIndex != 0)
             {
-                dataBase.Update("CategorieId = " + categorie_id.Text, "CountryId = " + GetHotelid(comboBox1.SelectedItem.ToString()));
+                dataBase.Update("CategorieId = " + categorie_id.Text, "HotelId = " + GetHotelid(comboBox1.SelectedItem.ToString()));
             }
+            Initalize();
         }
 
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)

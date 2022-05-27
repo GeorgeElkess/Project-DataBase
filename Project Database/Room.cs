@@ -46,44 +46,56 @@ namespace Project_Database
 
         private void hotelId_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (hotelId.SelectedIndex == 0)
+            {
+                Categorieid.Items.Clear();
+                Categorieid.Items.Add("Non");
+                return;
+            }
+            string HotelName = hotelId.SelectedItem.ToString();
+            string HotelId = GethotelId(HotelName);
+            DataBase CatigoryData = new DataBase("Categorie");
+            List<List<string>> x = CatigoryData.Read("HotelId = " + HotelId);
+            Categorieid.Items.Clear();
+            Categorieid.Items.Add("Non");
+            foreach (var item in x)
+            {
+                Categorieid.Items.Add(item[1]);
+            }
         }
-
         private void Categorieid_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void Add_Click(object sender, EventArgs e)
         {
-            if (Room_id.Text != "" && statetext.Text != "" && roomnumber.Text != "" && hotelId.SelectedIndex != -1 && hotelId.SelectedIndex != 0 && Categorieid.SelectedIndex != -1 && Categorieid.SelectedIndex != 0)
+            if (statetext.Text != "" && roomnumber.Text != "" && hotelId.SelectedIndex != -1 && hotelId.SelectedIndex != 0 && Categorieid.SelectedIndex != -1 && Categorieid.SelectedIndex != 0)
             {
-                dataBase.Insert("'" + Room_id.Text + "', '" + statetext.Text + "', " + "', '" + roomnumber.Text + "', " + GethotelId(hotelId.SelectedItem.ToString()) + "," + GetCategorieId(Categorieid.SelectedItem.ToString()));
+                dataBase.Insert($"'{statetext.Text}', '{roomnumber.Text}', {GethotelId(hotelId.SelectedItem.ToString())}, {GetCategorieId(Categorieid.SelectedItem.ToString())}");
             }
             else
             {
                 Message.Error("error");
             }
         }
-
         private void Search_Click(object sender, EventArgs e)
         {
             List<string> Headrs = new List<string>();
             Headrs.Add("Roomid");
             Headrs.Add("State");
             Headrs.Add("RoomNumber");
-            Headrs.Add("Hotelid");
-            Headrs.Add("Categorield");
+            Headrs.Add("HotelName");
+            Headrs.Add("CategorieName");
             string Condition = "";
             int t = 0;
             if (Room_id.Text != "")
             {
-                Condition += "Roomid = " + Room_id.Text;
+                Condition += "RoomId = " + Room_id.Text;
                 t = 1;
             }
             if (statetext.Text != "")
             {
-                Condition += (t == 1 ? "And " : "") + "State = " + statetext.Text;
+                Condition += (t == 1 ? "And " : "") + "State = '" + statetext.Text + "'";
                 t = 1;
             }
             if (roomnumber.Text != "")
@@ -93,7 +105,7 @@ namespace Project_Database
             }
             if (hotelId.SelectedIndex > 0)
             {
-                Condition += (t == 1 ? "And " : "") + "Hotelid = " + GethotelId(hotelId.SelectedItem.ToString());
+                Condition += (t == 1 ? "And " : "") + "HotelId = " + GethotelId(hotelId.SelectedItem.ToString());
                 t = 1;
             }
             if (Categorieid.SelectedIndex > 0)
@@ -101,20 +113,41 @@ namespace Project_Database
                 Condition += (t == 1 ? "And " : "") + "Categorield = " + GetCategorieId(Categorieid.SelectedItem.ToString());
                 t = 1;
             }
-            Screen_hotel.DataSource = dataBase.GetTable(Headrs, dataBase.Read(Condition));
+            List<List<string>> vs = dataBase.Read(Condition);
+            foreach (var item in vs)
+            {
+                string HotelId = item[3];
+                DataBase HotelData = new DataBase("Hotel");
+                string HotelName = HotelData.Read("HotelId = " + HotelId)[0][1];
+                item[3] = HotelName;
+                DataBase CatigoryData = new DataBase("Categorie");
+                string CatigoryId = item[4];
+                string CattigoryName = CatigoryData.Read("CategorieId = " + CatigoryId)[0][1];
+                item[4] = CattigoryName;
+            }
+            Screen_hotel.DataSource = dataBase.GetTable(Headrs, vs);
 
         }
-
+        void InicalizeState()
+        {
+            Room_id.Text = String.Empty;
+            statetext.Text = String.Empty;
+            roomnumber.Text = String.Empty;
+            hotelId.SelectedIndex = 0;
+            Categorieid.Items.Clear();
+            Categorieid.Items.Add("Non");
+            Categorieid.SelectedIndex = 0;
+        }
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
             if (Room_id.Text != "")
             {
-                dataBase.Delete("Roomid= " + Room_id.Text);
+                dataBase.Delete("RoomId= " + Room_id.Text);
             }
             else
             {
@@ -126,19 +159,31 @@ namespace Project_Database
         {
             if (Room_id.Text != "" && statetext.Text != "")
             {
-                dataBase.Update("HotelId = " + Room_id.Text, "State = '" + statetext.Text + "'");
+                dataBase.Update("RoomId = " + Room_id.Text, "State = '" + statetext.Text + "'");
             }
             if (Room_id.Text != "" && roomnumber.Text != "")
             {
-                dataBase.Update("HotelId = " + Room_id.Text, "RoomNumber = '" + roomnumber.Text + "'");
+                dataBase.Update("RoomId = " + Room_id.Text, "RoomNumber = '" + roomnumber.Text + "'");
             }
             if (Room_id.Text != "" && hotelId.SelectedIndex != -1 && hotelId.SelectedIndex != 0)
             {
-                dataBase.Update("HotelId = " + Room_id.Text, "Hotelid = " + GethotelId(hotelId.SelectedItem.ToString()));
+                dataBase.Update("RoomId = " + Room_id.Text, "Hotelid = " + GethotelId(hotelId.SelectedItem.ToString()));
             }
             if (Room_id.Text != "" && Categorieid.SelectedIndex != -1 && Categorieid.SelectedIndex != 0)
             {
-                dataBase.Update("HotelId = " + Room_id.Text, "Categorield = " + GetCategorieId(Categorieid.SelectedItem.ToString()));
+                dataBase.Update("RoomId = " + Room_id.Text, "Categorield = " + GetCategorieId(Categorieid.SelectedItem.ToString()));
+            }
+        }
+
+        private void Room_Load(object sender, EventArgs e)
+        {
+            DataBase HotelData = new DataBase("Hotel");
+            List<List<string>> x = HotelData.Read();
+            hotelId.Items.Clear();
+            hotelId.Items.Add("Non");
+            foreach (var item in x)
+            {
+                hotelId.Items.Add(item[1]);
             }
         }
     }

@@ -15,8 +15,19 @@ namespace Project_Database
         public Hotel()
         {
             InitializeComponent();
+            nametext.KeyPress += Nametext_KeyPress;
+            hotel_id.KeyPress += Hotel_id_KeyPress;
         }
 
+        private void Hotel_id_KeyPress(object? sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
+        }
+
+        private void Nametext_KeyPress(object? sender, KeyPressEventArgs e)
+        {
+            
+        }
 
         DataBase dataBase = new DataBase("Hotel");
         public string GetCountryId(string Name)
@@ -34,6 +45,7 @@ namespace Project_Database
                 if (Datachec.Count == 0)
                 {
                     dataBase.Insert("'" + nametext.Text + "', '" + addresstext.Text + "', '" + ratingtext.Text + "', " + GetCountryId(comboBox1.SelectedItem.ToString()));
+                    Initialize();
                 }
                 else
                 {
@@ -89,6 +101,7 @@ namespace Project_Database
             {
                 dataBase.Update("HotelId = " + hotel_id.Text, "CountryId = " + GetCountryId(comboBox1.SelectedItem.ToString()));
             }
+            Initialize();
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -96,6 +109,7 @@ namespace Project_Database
             if (hotel_id.Text != "")
             {
                 dataBase.Delete("HotelId= " + hotel_id.Text);
+                Initialize();
             }
             else
             {
@@ -147,9 +161,16 @@ namespace Project_Database
                 x[i][4] = CountryName;
             }
             Screen_hotel.DataSource = dataBase.GetTable(Headrs, x);
-
+            Initialize();
         }
-
+        void Initialize()
+        {
+            hotel_id.Text = String.Empty;
+            nametext.Text = String.Empty;
+            comboBox1.SelectedIndex = 0;
+            addresstext.Text = String.Empty;
+            ratingtext.Text = String.Empty;
+        }
         private void Screen_hotel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -164,6 +185,7 @@ namespace Project_Database
             {
                 comboBox1.Items.Add(x[i][1]);
             }
+            Initialize();
         }
 
         private void ratingtext_KeyPress(object sender, KeyPressEventArgs e)
@@ -173,7 +195,7 @@ namespace Project_Database
 
         private void hotel_id_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar)) e.Handled = true;
+            
         }
     }
 }
