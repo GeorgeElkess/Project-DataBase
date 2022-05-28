@@ -85,5 +85,13 @@ namespace Project_Database
         {
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Customer Customer = new Customer();
+            this.Hide();
+            Customer.ShowDialog();
+            this.Close();
+        }
     }
 }

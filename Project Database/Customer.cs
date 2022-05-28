@@ -34,7 +34,6 @@ namespace Project_Database
 
         private void Sex_SelectedIndexChanged(object sender, EventArgs e)
         {
-           Sex.SelectedItem.ToString();
 
         }
         void Initialize()
@@ -48,20 +47,22 @@ namespace Project_Database
             Passport_ID.Text = String.Empty;
             Address.Text = String.Empty;
             Sex.Text = String.Empty;
+            Sex.SelectedIndex = -1;
+            Sex.ClearSelected();
         }
         DataBase dataBase = new DataBase("Customer");
         private void ADD_Click(object sender, EventArgs e)
         {
             if (First_Name.Text != "" && Last_Name.Text != "" && Date_Of_Birth.Text != ""
-               && Address.Text != "" && Customer_ID.Text != "" && Passport_ID.Text != "" && Sex.Text != "" )
+               && Address.Text != "" && Passport_ID.Text != "" && Sex.Text != "" )
             {
                 List<List<string>> datachec = new List<List<string>>();
                 datachec = dataBase.Read("FirstName= '" + First_Name.Text + "'");
                 if (datachec.Count == 0)
                 {
                     Date date = new Date(Date_Of_Birth.Text);
-                    dataBase.Insert("'" + First_Name.Text + "', '" + Last_Name.Text + "', '" + date.ToFormatedString() + "', '" +
-                        Address.Text + "', '" + Customer_ID.Text + "', " + Passport_ID.Text + ", '" + Sex.Text + "', '");
+                    dataBase.Insert("'" + First_Name.Text + "', '" + Last_Name.Text + "', '" + Sex.SelectedItem.ToString()+"', '" + date.ToFormatedString() + "', '" +
+                        Address.Text + "', '" + Passport_ID.Text + "', '" + Sex.Text + "'");
                     Initialize();
                 }
                 else
@@ -125,10 +126,6 @@ namespace Project_Database
                 MakeCondition(ref condition, "PassPortId='" + Passport_ID.Text + "'");
             }
             List<List<string>> x = dataBase.Read(condition);
-            for (int i = 0; i < x.Count; i++)
-            {
-                x[i].RemoveAt(x[i].Count - 1);
-            }
             Screen_hotel.DataSource = dataBase.GetTable(Headers, x);
         }
 
@@ -189,10 +186,22 @@ namespace Project_Database
                 Datachec = dataBase.Read("CustomerId=" + Customer_ID.Text);
                 if (Datachec.Count != 0)
                 {
-                    dataBase.Update("CustomerId = " + Customer_ID.Text, "PassPortId = " + Passport_ID.Text);
+                    dataBase.Update("CustomerId = " + Customer_ID.Text, "PassPortId = '" + Passport_ID.Text + "'");
                 }
             }
             Initialize();
+        }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            Headers.Add("Customer Id");
+            Headers.Add("First Name");
+            Headers.Add("Last Name");
+            Headers.Add("Sex");
+            Headers.Add("Date of Birth");
+            Headers.Add("Address");
+            Headers.Add("Passport Id");
+           Initialize();
         }
     }
 }

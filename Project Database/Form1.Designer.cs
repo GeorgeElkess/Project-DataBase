@@ -37,6 +37,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -129,11 +130,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(167, 174);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(149, 75);
+            this.button10.TabIndex = 10;
+            this.button10.Text = "Customer";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 475);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -161,5 +173,6 @@
         private Button button8;
         private Button button9;
         private Button button2;
+        private Button button10;
     }
 }
